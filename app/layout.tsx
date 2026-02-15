@@ -8,13 +8,15 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Balance Portfolio",
-    template: "%s | Balance Portfolio"
+    default: "Amrish Tagadghar Portfolio",
+    template: "%s | Amrish Tagadghar Portfolio"
   },
-  description: "Design portfolio focused on premium editorial storytelling and measurable outcomes.",
+  description:
+    "A curated collection of branding, motion, and editorial design crafted to connect, communicate, and leave a lasting impression.",
   openGraph: {
-    title: "Balance Portfolio",
-    description: "Design portfolio focused on premium editorial storytelling and measurable outcomes.",
+    title: "Amrish Tagadghar Portfolio",
+    description:
+      "A curated collection of branding, motion, and editorial design crafted to connect, communicate, and leave a lasting impression.",
     url: siteUrl,
     type: "website"
   }

@@ -2,176 +2,257 @@ import { Article, CaseStudy, PlayItem } from "@/lib/types";
 
 export const caseStudies: CaseStudy[] = [
   {
-    title: "Rebuilding a B2B Brand System for Scale",
-    slug: "b2b-brand-system-scale",
+    title: "Amundi Thematic Campaign",
+    slug: "amundi-thematic-campaign",
     featured: true,
-    excerpt: "Unified a fragmented B2B visual system into a reusable brand toolkit across sales and marketing.",
+    excerpt:
+      "As Lead Designer, I built a cohesive visual system to simplify complex investment themes for retail investors.",
     disciplines: ["Brand", "Marketing", "Presentation"],
-    industry: "SaaS",
-    year: 2025,
-    role: "Lead Visual Designer",
-    timeline: "12 weeks",
-    tools: ["Figma", "After Effects", "Notion"],
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    thumbnail: "https://images.unsplash.com/photo-1551434678-e076c223a692",
+    industry: "Asset Management",
+    year: 2022,
+    role: "Lead Designer",
+    timeline: "Campaign phase",
+    tools: ["Figma", "Illustrator", "InDesign"],
+    coverImage: "https://framerusercontent.com/images/1hsY1R4ZWTz33u8W4EK0Nef6s.png",
+    thumbnail: "https://framerusercontent.com/images/hmTfVVgcpLtDymp9bgQgmeJmX70.png",
     problem:
-      "Teams were shipping decks, ads, and landing pages with inconsistent visuals and duplicated effort.",
+      "Amundi needed to communicate thematic investing clearly for retail investors while staying aligned with brand standards.",
     goals: [
-      "Create one flexible design language for campaign and product storytelling.",
-      "Reduce design turnaround for recurring assets.",
-      "Improve brand consistency across web and sales collateral."
+      "Break down abstract investment ideas into digestible sections.",
+      "Create strong visual hierarchy for readability.",
+      "Improve production efficiency by systematizing design assets."
     ],
     process: [
-      "Audited 180+ assets and mapped repeated design patterns.",
-      "Built a modular type and spacing system.",
-      "Partnered with marketing and RevOps to pilot high-impact templates."
+      "Reviewed existing materials and competitor campaigns.",
+      "Developed modular layout systems and custom illustration language.",
+      "Built a centralized Figma asset library with reusable components."
     ],
     highlights: [
-      "New visual identity kit adopted by 4 business units.",
-      "Motion principles added for product launch storytelling.",
-      "Template library shipped with governance guidelines."
+      "Created brochures across multiple thematic topics.",
+      "Aligned marketing and content teams around one visual system.",
+      "Extended campaign visuals to websites and internal platforms."
     ],
-    deliverables: ["Brand guidelines", "Campaign templates", "Sales deck system", "Motion snippets"],
+    deliverables: ["Art direction", "Visual strategy", "Brochure and print design", "Illustration system"],
     results: [
-      "Template adoption exceeded 85% in two months.",
-      "Brand QA revisions dropped significantly.",
-      "Launch assets shipped faster across channels."
+      "Design time cut by 40% through reusable assets.",
+      "Campaign assets remained in use longer due to sustained engagement.",
+      "Client praised clarity and visual appeal."
     ],
     learnings: [
-      "Strong governance matters as much as components.",
-      "Design review rituals prevent style drift."
+      "A strong design system is as valuable as polished visuals.",
+      "Operational pain points can be solved through design structure."
     ],
     metrics: [
-      { label: "Time saved", value: "40%" },
-      { label: "Asset consistency", value: "+31%" }
+      { label: "Production time saved", value: "40%" },
+      { label: "Reuse and consistency", value: "Significantly improved" }
     ]
   },
   {
-    title: "Editorial Landing Pages for Campaign Velocity",
-    slug: "editorial-landing-pages-campaign-velocity",
+    title: "OBAM AM - Annual Investor Letter",
+    slug: "obam-am-annual-investor-letter",
     featured: true,
-    excerpt: "Designed a high-contrast landing page framework balancing premium aesthetic and conversion clarity.",
-    disciplines: ["Web", "Marketing", "Motion"],
-    industry: "Fintech",
-    year: 2024,
-    role: "Product Designer",
-    timeline: "8 weeks",
-    tools: ["Figma", "Framer", "GA4"],
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    thumbnail: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d",
-    problem: "Landing pages looked generic, loaded slowly, and underperformed on key campaign conversions.",
+    excerpt:
+      "Designed a visually engaging investor letter that turned complex financial data into clear, brand-aligned communication.",
+    disciplines: ["Presentation", "Brand"],
+    industry: "Asset Management",
+    year: 2022,
+    role: "Designer",
+    timeline: "Annual reporting cycle",
+    tools: ["InDesign", "Illustrator"],
+    coverImage: "https://framerusercontent.com/images/AGksABZUSYRSFHnOesdHwzXNzE.jpg",
+    thumbnail: "https://framerusercontent.com/images/qvsPmpcwridV2M7Xt5EmIgHTTVQ.png",
+    problem:
+      "OBAM's shareholder letter needed to evolve from a routine document into a stronger investor communication touchpoint.",
     goals: [
-      "Improve conversion without sacrificing visual quality.",
-      "Make landing page creation repeatable for growth teams."
+      "Improve readability without losing financial depth.",
+      "Strengthen OBAM brand expression in annual investor communications.",
+      "Create assets reusable across print and digital channels."
     ],
     process: [
-      "Analyzed heatmaps and drop-off points.",
-      "Redesigned page hierarchy around message clarity and proof.",
-      "Built reusable section blocks and production specs."
+      "Converted finalized copy into a visual narrative structure.",
+      "Built custom illustrations and infographics for key financial themes.",
+      "Validated layout behavior across print and digital formats."
     ],
     highlights: [
-      "Story-driven hero structures with concise CTAs.",
-      "Proof sections with client outcomes and testimonial cards."
+      "Balanced information density with editorial clarity.",
+      "Created reusable visual assets for future marketing use."
     ],
-    deliverables: ["Landing page kit", "Performance guidelines", "Experiment backlog"],
-    results: ["Improved campaign launch speed and cross-team handoff quality."],
-    learnings: ["Template constraints increase quality under tight deadlines."],
+    deliverables: ["Investor letter design", "Infographics", "Illustrations", "Multi-format production assets"],
+    results: [
+      "Positive feedback from investors and directors.",
+      "Letter became a standout annual communication piece."
+    ],
+    learnings: ["Financial communications improve when visual hierarchy does the heavy lifting."],
     metrics: [
-      { label: "CVR lift", value: "+18%" },
-      { label: "Build time", value: "-35%" }
+      { label: "Stakeholder feedback", value: "Positive across leadership and investors" },
+      { label: "Communication impact", value: "Elevated annual letter positioning" }
     ]
   },
   {
-    title: "Presentation System for Executive Storytelling",
-    slug: "presentation-system-executive-storytelling",
-    featured: false,
-    excerpt: "Turned ad-hoc executive decks into a consistent presentation system for investor and customer narratives.",
+    title: "Achmea IM and Blue Sky Group",
+    slug: "achmea-im-and-blue-sky-group",
+    featured: true,
+    excerpt:
+      "Directed design for a strategic report that supported Achmea IM's successful acquisition of Blue Sky Group.",
     disciplines: ["Presentation", "Brand"],
-    industry: "Healthcare",
+    industry: "Finance",
+    year: 2024,
+    role: "Lead Designer",
+    timeline: "Strategic report cycle",
+    tools: ["PowerPoint", "Illustrator"],
+    coverImage: "https://framerusercontent.com/images/EQhpx4yBe15zuURa00DWaVfVo.png",
+    thumbnail: "https://framerusercontent.com/images/ZFY9zNjme70tmNzCxadaU1OOxo.png",
+    problem:
+      "Achmea IM needed a strategic report that balanced dense financial data with clear, persuasive business storytelling.",
+    goals: [
+      "Build trust through clarity and professional design execution.",
+      "Unify complex information into a coherent narrative system.",
+      "Keep a distributed design team aligned under tight timelines."
+    ],
+    process: [
+      "Mapped narrative structure and content modules first.",
+      "Built flexible editorial layouts for data-heavy and image-led sections.",
+      "Used mini design-system rules to keep cross-team consistency."
+    ],
+    highlights: [
+      "End-to-end design direction from structure to final delivery.",
+      "Close collaboration with content leads and stakeholders."
+    ],
+    deliverables: ["Strategic report", "Layout system", "Iconography", "Design direction"],
+    results: [
+      "Report supported stakeholder confidence at a high-stakes business moment.",
+      "Final piece contributed to successful acquisition outcomes.",
+      "Established a new internal quality benchmark for future reports."
+    ],
+    learnings: ["Design can directly influence business confidence when storytelling and clarity are prioritized."],
+    metrics: [
+      { label: "Business outcome", value: "Supported successful acquisition" },
+      { label: "Design impact", value: "New standard for future reports" }
+    ]
+  },
+  {
+    title: "CORE - Creo Asset Management Branding",
+    slug: "core-creo-asset-management-branding",
+    featured: true,
+    excerpt:
+      "Led branding, messaging, website, and social assets for CREO to showcase CORE's design capabilities.",
+    disciplines: ["Brand", "Web", "Marketing"],
+    industry: "Asset Management",
+    year: 2020,
+    role: "Lead Designer",
+    timeline: "Brand rollout",
+    tools: ["Figma", "Adobe Creative Suite"],
+    coverImage: "https://framerusercontent.com/images/AIS8TfapeKAM9ac5yPCWSvfUpZM.jpg",
+    thumbnail: "https://framerusercontent.com/images/Cge4EAtoC9xfGvgGVageI2tyI.png",
+    problem: "CREO required a cohesive brand presence across decks, web surfaces, and social media channels.",
+    goals: [
+      "Build a unified branding language across channels.",
+      "Create persuasive messaging-driven assets for business growth."
+    ],
+    process: [
+      "Defined visual and messaging direction.",
+      "Produced coordinated assets for website and social channels.",
+      "Aligned outputs to CORE's capability narrative."
+    ],
+    highlights: ["Cross-channel consistency from brand book to social campaigns."],
+    deliverables: ["Brand book", "Presentation deck", "Website assets", "Social templates"],
+    results: ["Delivered a coherent public-facing identity for CREO and CORE design work."],
+    learnings: ["Messaging alignment is essential when designing across many channels."],
+    metrics: [{ label: "Channel coverage", value: "Brand, web, and social" }]
+  },
+  {
+    title: "Nikko AM Social Media Campaign",
+    slug: "nikko-am-social-media-campaign",
+    featured: true,
+    excerpt:
+      "Developed and executed social campaign design for Nikko's global equity strategy to increase visibility and engagement.",
+    disciplines: ["Marketing", "Motion", "Brand"],
+    industry: "Asset Management",
     year: 2023,
-    role: "Design Consultant",
-    timeline: "6 weeks",
-    tools: ["PowerPoint", "Figma"],
-    coverImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    thumbnail: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40",
-    problem: "Executive decks were inconsistent and hard to update across teams.",
-    goals: ["Standardize narrative arcs and visual language.", "Improve reuse across functions."],
-    process: ["Interviewed stakeholders.", "Created modular deck structures.", "Trained internal champions."],
-    highlights: ["100+ slide patterns with clear usage notes."],
-    deliverables: ["Deck template", "Slide pattern library", "Quick-start playbook"],
-    results: ["Internal confidence increased in high-stakes presentations."],
-    learnings: ["Simple rules beat heavy documentation."],
-    metrics: [{ label: "Prep time", value: "-50%" }]
+    role: "Lead Designer",
+    timeline: "Campaign cycle",
+    tools: ["Photoshop", "After Effects", "Figma"],
+    coverImage: "https://framerusercontent.com/images/5MdDId2SJ8767YRTk03eIFUWgA.png",
+    thumbnail: "https://framerusercontent.com/images/9g0dWT7uYTHGGRn4zTKtco7GM7Q.png",
+    problem: "Nikko needed stronger social storytelling for a specialized equity strategy.",
+    goals: [
+      "Increase campaign visibility across social platforms.",
+      "Present strategy benefits in a concise visual format."
+    ],
+    process: [
+      "Crafted campaign-specific visual direction.",
+      "Produced social posts and video assets tailored for platform engagement."
+    ],
+    highlights: ["Focused campaign narrative around distinctive strategy attributes."],
+    deliverables: ["Social posts", "Campaign videos"],
+    results: ["Improved visibility for Nikko's global equity campaign messaging."],
+    learnings: ["Social campaigns perform best when strategy and visual clarity are tightly paired."],
+    metrics: [{ label: "Primary outcome", value: "Boosted awareness and engagement" }]
+  },
+  {
+    title: "ASN Impact Investors - Impact Report",
+    slug: "asn-impact-investors-impact-report",
+    featured: true,
+    excerpt:
+      "Led design of ASN's 100+ page Impact Report, including custom illustrations and team direction from concept to delivery.",
+    disciplines: ["Presentation", "Brand"],
+    industry: "Impact Investing",
+    year: 2024,
+    role: "Principal Designer",
+    timeline: "Long-form report production",
+    tools: ["InDesign", "Illustrator"],
+    coverImage: "https://framerusercontent.com/images/d3vXZHVvLoGb8gXshMWARhO5bf8.png",
+    thumbnail: "https://framerusercontent.com/images/OdabbR0tPNlqv8gkqmT46bwa5I.png",
+    problem: "ASN needed a high-volume impact report that stayed clear, visually consistent, and engaging.",
+    goals: [
+      "Define a consistent visual tone for a 100+ page document.",
+      "Lead the design team for coherent execution from start to finish."
+    ],
+    process: [
+      "Built page systems and visual guidelines for scale.",
+      "Created custom illustrations and reviewed quality throughout production."
+    ],
+    highlights: ["Large-scale editorial delivery with consistent narrative clarity."],
+    deliverables: ["Impact report design", "Illustrations", "Visual direction"],
+    results: ["Project success directly led to additional client opportunities."],
+    learnings: ["Large-format reports demand strict systems and active design leadership."],
+    metrics: [{ label: "Report size", value: "100+ pages" }]
   }
 ];
 
 export const articles: Article[] = [
   {
-    title: "Design Systems for Campaign Teams",
-    slug: "design-systems-for-campaign-teams",
-    excerpt: "How to create design systems that move fast without losing visual quality.",
-    category: "Systems",
-    tags: ["systems", "campaigns"],
-    publishedAt: "2026-01-12",
-    readingTime: "6 min read",
-    coverImage: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    content: [
-      "Campaign design fails when systems are either too rigid or too vague.",
-      "The practical middle ground is a set of repeatable patterns with explicit boundaries.",
-      "Start with the highest-frequency assets and build from real workflows, not theory."
-    ]
-  },
-  {
-    title: "Typography Choices That Improve Clarity",
-    slug: "typography-choices-that-improve-clarity",
-    excerpt: "Type hierarchy decisions that make dense content easier to scan and trust.",
-    category: "Typography",
-    tags: ["type", "editorial"],
-    publishedAt: "2025-11-08",
-    readingTime: "4 min read",
-    coverImage: "https://images.unsplash.com/photo-1505685296765-3a2736de412f",
-    content: [
-      "The best typography systems make hierarchy obvious before the first sentence is read.",
-      "Use rhythm and spacing as structure, not decoration.",
-      "A strong serif-sans pairing can increase perceived authority in editorial contexts."
-    ]
-  },
-  {
-    title: "How I Scope Portfolio Case Studies",
-    slug: "how-i-scope-portfolio-case-studies",
-    excerpt: "A practical framework for writing case studies that are concise and credible.",
+    title: "Big-Picture Vs Pixel-Perfect? A Designer's Guide to Strategic Project Flow",
+    slug: "big-picture-vs-pixel-perfect",
+    excerpt:
+      "In this blog, I explore the tension between zooming out for strategy and zooming in for craft in the design process.",
     category: "Process",
-    tags: ["portfolio", "case-studies"],
-    publishedAt: "2025-09-20",
-    readingTime: "5 min read",
-    coverImage: "https://images.unsplash.com/photo-1456324504439-367cee3b3c32",
+    tags: ["strategy", "craft", "design-process"],
+    publishedAt: "2026-01-19",
+    readingTime: "8 min read",
+    coverImage: "https://framerusercontent.com/images/BKTvQfpjYrncEz4CocgS0Ys8TbI.jpg",
     content: [
-      "Strong case studies do not need every detail, only the right details.",
-      "Show decisions, tradeoffs, and measured outcomes.",
-      "End each story with what changed and what you would improve next."
+      "Should you start with the brand vision or the button padding? The answer changes by context, team maturity, and project risk.",
+      "A top-down approach helps define structure, goals, and user journeys. A bottom-up approach sharpens details that build trust and polish.",
+      "The best outcomes come from balancing both modes intentionally, so the design is not only beautiful but strategically purposeful."
     ]
   }
 ];
 
 export const playItems: PlayItem[] = [
   {
-    title: "Generative Poster Grid",
-    slug: "generative-poster-grid",
-    shortDescription: "A typography poster system generated from a simple token set.",
-    status: "WIP",
-    tags: ["Generative", "Type", "Code"],
-    date: "2026-02-05",
-    coverMedia: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    content: ["Testing constrained randomness for headline rhythm and composition balance."]
-  },
-  {
-    title: "Micro-motion Hero Experiments",
-    slug: "micro-motion-hero-experiments",
-    shortDescription: "Small page-load motion studies for premium portfolio intros.",
+    title: "Sara AI Animation",
+    slug: "sara-ai-animation",
+    shortDescription: "Animated character design for the SARA AI interface using scenario-based motion concepts.",
     status: "Shipped",
-    tags: ["Motion", "Code"],
-    date: "2025-12-18",
-    coverMedia: "https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+    tags: ["Motion", "AI", "Type"],
+    date: "2020-01-01",
+    coverMedia: "https://framerusercontent.com/images/Fafxa7NGDgnuuJaW5HrDpUoK4Q.gif",
+    content: [
+      "For SARA AI, I developed three mascot animation concepts: sleeping, waving, and reading.",
+      "Using Adobe After Effects, I transformed a single base mascot into expressive motion states with natural timing and character.",
+      "The client was thrilled with the final result, and the project was completed efficiently."
+    ]
   }
 ];
 

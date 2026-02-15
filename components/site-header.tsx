@@ -13,7 +13,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 border-b border-ink/10 bg-paper/60 backdrop-blur-xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-ink md:text-xl">
-          Balance Portfolio
+          Amrish Tagadghar
         </Link>
         <nav className="flex flex-wrap items-center justify-end gap-2 text-xs font-semibold uppercase tracking-[0.12em] md:gap-4 md:text-sm md:normal-case md:tracking-normal">
           {navItems.map((item) => (

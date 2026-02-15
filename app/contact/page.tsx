@@ -2,20 +2,21 @@ export default function ContactPage() {
   return (
     <div className="page-shell space-y-8">
       <section>
-        <h1 className="section-title">Let&apos;s build something clear, bold, and effective.</h1>
+        <h1 className="section-title">Contact</h1>
         <p className="mt-3 max-w-2xl text-ink/80">
-          Share your goal, timeline, and what you need designed. I&apos;ll reply with next steps and a practical plan.
+          I&apos;m looking forward to hearing from you. If you prefer not to fill out forms, email me directly and
+          let&apos;s talk about the next big thing.
         </p>
-        <p className="mt-4 text-sm text-ink/70">Availability: Open for full-time and freelance work.</p>
+        <p className="mt-4 text-sm text-ink/70">Availability: Currently available for new work.</p>
       </section>
 
       <section className="grid gap-8 md:grid-cols-2">
         <article className="rounded-2xl border border-ink/10 bg-white p-6">
           <h2 className="font-serif text-2xl">Direct links</h2>
           <ul className="mt-4 space-y-2 text-sm text-ink/80">
-            <li>Email: hello@balance.design</li>
-            <li>LinkedIn: linkedin.com/in/your-profile</li>
-            <li>Resume: /resume.pdf</li>
+            <li>Email: amrishst@gmail.com</li>
+            <li>LinkedIn: linkedin.com</li>
+            <li>Dribbble and Behance profiles available</li>
           </ul>
         </article>
 

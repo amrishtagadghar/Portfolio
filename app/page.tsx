@@ -4,7 +4,7 @@ import { CaseStudyCard } from "@/components/case-study-card";
 import { articles, caseStudies } from "@/lib/content";
 
 export default function HomePage() {
-  const featuredCaseStudies = caseStudies.filter((item) => item.featured).slice(0, 3);
+  const featuredCaseStudies = caseStudies.filter((item) => item.featured).slice(0, 6);
   const latestArticles = [...articles]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 3);
@@ -14,12 +14,12 @@ export default function HomePage() {
       <section className="glass-panel relative overflow-hidden rounded-[2rem] p-8 md:p-12">
         <div className="absolute right-4 top-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ff7f96] to-[#f6bea8] opacity-40 blur-2xl" />
         <div className="absolute bottom-0 right-1/4 h-24 w-24 rounded-full bg-gradient-to-br from-[#5ca8ff] to-[#5dd3ad] opacity-40 blur-2xl" />
-        <p className="text-xs uppercase tracking-[0.2em] text-ink/70">Open to full-time and freelance</p>
+        <p className="text-xs uppercase tracking-[0.2em] text-ink/70">Amrish Tagadghar | London</p>
         <h1 className="hero-title mt-4 max-w-4xl font-serif">
-          Design that turns complex stories into clear, high-impact visuals.
+          A curated collection of branding, motion, and editorial design.
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-ink/80">
-          Brand systems, investor communications, and digital assets built for clarity, consistency, and speed.
+          Crafted to connect, communicate, and leave a lasting impression.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
@@ -50,12 +50,12 @@ export default function HomePage() {
         <h2 className="section-title">Capabilities</h2>
         <div className="flex flex-wrap gap-3 text-sm">
           {[
-            "Brand systems",
-            "Campaign key visuals",
-            "Presentation design",
-            "Editorial layouts",
-            "Web landing pages",
-            "Motion and micro-interactions"
+            "Brand and visual design",
+            "Editorial and impact reports",
+            "Social campaigns and videos",
+            "Cross-functional collaboration",
+            "Project and client communication",
+            "Design leadership"
           ].map((item) => (
             <span key={item} className="rounded-full border border-ink/20 bg-white/45 px-4 py-2">
               {item}
@@ -69,16 +69,16 @@ export default function HomePage() {
         <div className="grid gap-4 md:grid-cols-3">
           <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Industries</p>
-            <p className="mt-2 text-sm text-ink/80">SaaS, Fintech, Healthcare, B2B Services</p>
+            <p className="mt-2 text-sm text-ink/80">Finance, Asset Management, Technology</p>
           </article>
           <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Outcomes</p>
-            <p className="mt-2 text-sm text-ink/80">Faster launches, clearer narratives, stronger design governance</p>
+            <p className="mt-2 text-sm text-ink/80">40% production-time reduction on large campaign systems</p>
           </article>
           <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Testimonials</p>
             <p className="mt-2 text-sm text-ink/80">
-              &quot;Clear thinking, premium execution, and consistently reliable delivery.&quot;
+              Available for new work. Let&apos;s talk about the next big thing.
             </p>
           </article>
         </div>

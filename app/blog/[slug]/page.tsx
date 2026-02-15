@@ -42,6 +42,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
         </p>
         <h1 className="mt-4 font-serif text-4xl tracking-tight">{article.title}</h1>
         <p className="mt-4 max-w-3xl text-ink/80">{article.excerpt}</p>
+        <div className="mt-6 h-[300px] w-full rounded-2xl bg-cover bg-center md:h-[420px]" style={{ backgroundImage: `url(${article.coverImage})` }} />
         <div className="mt-8 space-y-5 text-ink/90">
           {article.content.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>

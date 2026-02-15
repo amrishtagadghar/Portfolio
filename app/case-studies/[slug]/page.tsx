@@ -39,6 +39,7 @@ export default async function CaseStudyDetailPage({ params }: CaseStudyDetailPag
         <p className="text-xs uppercase tracking-[0.16em] text-ink/60">{study.year}</p>
         <h1 className="section-title">{study.title}</h1>
         <p className="max-w-3xl text-ink/80">{study.excerpt}</p>
+        <div className="h-[320px] w-full rounded-3xl bg-cover bg-center md:h-[440px]" style={{ backgroundImage: `url(${study.coverImage})` }} />
         <div className="flex flex-wrap gap-2">
           {study.disciplines.map((discipline) => (
             <span key={discipline} className="rounded-full border border-ink/20 px-3 py-1 text-xs">
