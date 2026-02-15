@@ -1,0 +1,433 @@
+1) Project brief
+Goal
+
+Create a design-first portfolio website that:
+
+Looks premium and editorial (strong typography, grid, motion, high craft).
+
+Makes case studies easy to browse and convincing to read.
+
+Supports writing (blogs/articles) and lightweight “Play” experiments.
+
+Is fast, accessible, and SEO-ready.
+
+Deploys to Vercel with a CMS workflow for content updates without code.
+
+Primary audiences
+
+Hiring managers (Brand/Visual/Marketing/Product).
+
+Creative directors and design leads.
+
+Potential freelance clients.
+
+Success metrics
+
+Visitors can reach a case study in ≤2 clicks from Home.
+
+80+ Lighthouse Performance on desktop/mobile.
+
+Case-study page scroll depth + strong CTA clicks (Contact / Calendly / Email).
+
+CMS updates require no code changes.
+
+2) Information architecture (site map)
+
+Home (/)
+
+Case Studies (index) (/case-studies)
+
+Case Study Detail (/case-studies/[slug])
+
+Play (/play)
+
+Project Detail (optional) (/play/[slug])
+
+Blog (index) (/blog)
+
+Article Detail (/blog/[slug])
+
+Contact (/contact)
+
+Utility (recommended)
+
+About (/about) (optional but strongly recommended)
+
+404
+
+Privacy (/privacy) (optional)
+
+Navigation: Home / Case Studies / Play / Blog / Contact
+
+3) Page requirements (what each page must include)
+Home
+
+Purpose: a punchy, design-forward overview that pushes to case studies.
+
+Must include
+
+Hero with: Name + role + positioning statement (1–2 lines) + primary CTA (“View case studies”) + secondary CTA (“Contact”).
+
+Featured case studies (3–6 cards).
+
+Capability strip (e.g., Brand systems, Campaigns, Presentation design, Web design, Motion).
+
+Proof / credibility (logos, industries, outcomes, metrics, testimonials).
+
+Latest writing (3 recent blog posts).
+
+Footer with contact links + social.
+
+Nice to have
+
+Sticky “availability” badge (e.g., “Open to full-time / freelance”).
+
+Motion micro-interactions (hover, subtle scroll reveals).
+
+Case Studies (index)
+
+Purpose: scanning + filtering.
+
+Must include
+
+Grid/list toggle (optional).
+
+Filters: Discipline (Brand / Marketing / Product / Presentation / Web), Industry, Year, Role.
+
+Sort: Featured, Newest.
+
+Card content: title, short descriptor, tags, outcome metric (if available), thumbnail.
+
+CTA at bottom: “Want results like this?” → Contact.
+
+Case Study Detail
+
+Purpose: sell your thinking + execution with a clear story.
+
+Must include sections
+
+Hero: Title, one-liner, tags, role, timeline, tools.
+
+Outcome metrics (if any): time saved %, conversion %, pipeline impact, stakeholder wins.
+
+Problem / context
+
+Goals
+
+Process (high-level and selective; don’t over-explain)
+
+Highlights / key visuals
+
+Deliverables
+
+Results + learnings
+
+Next case study / related work
+
+CTA (Contact)
+
+Media support
+
+Image gallery blocks
+
+Full-bleed hero image
+
+Optional video embed
+
+Play
+
+Purpose: “alive” space for experiments.
+
+Must include
+
+Masonry/grid of experiments with tags (e.g., Motion, AI, Type, Generative).
+
+Each item: title, 1–2 line description, status (WIP / shipped), date.
+
+Optional detail pages or modal view.
+
+Blog (index)
+
+Purpose: design thinking + credibility.
+
+Must include
+
+Category filters (Brand, Systems, Typography, Process, Career).
+
+Article cards: title, excerpt, read time, date, cover.
+
+Newsletter/subscribe CTA (optional).
+
+Blog article detail
+
+Must include
+
+Title + cover + author + date + read time
+
+Table of contents (optional)
+
+Rich text + images + pull quotes
+
+Related posts
+
+CTA to case studies and contact
+
+Contact
+
+Must include
+
+Clear headline + availability
+
+Contact methods (Email, LinkedIn)
+
+Form (name/email/message) with spam protection (basic honeypot or provider)
+
+Quick links: resume/portfolio PDF (optional)
+
+4) Design system requirements (design-oriented, non-negotiables)
+Visual style
+
+Editorial layout, strong typographic hierarchy, generous whitespace.
+
+Aileron as primary font (you can pair with a serif for headlines if desired, but keep it intentional).
+
+Grid: 12-column on desktop, 4–6 on mobile/tablet.
+
+Components: cards, chips, badges, quote blocks, image rails, sticky TOC.
+
+Interaction & motion
+
+Hover states everywhere meaningful.
+
+Page transitions subtle (fade/slide, 200–400ms).
+
+Scroll reveal for sections (avoid heavy animations; keep it premium).
+
+Accessibility
+
+Contrast AA minimum.
+
+Keyboard navigation for menus, modals, filters.
+
+Alt text required in CMS for images.
+
+Performance
+
+Optimized images (next/image), lazy-loading galleries.
+
+Minimal JS for content pages.
+
+Avoid heavy animation libraries unless needed.
+
+5) CMS plan (recommended content model)
+
+Pick one:
+
+Sanity (best for structured case studies, custom blocks, scalable)
+
+Contentful (clean UI, strong editorial workflow)
+
+Hygraph (GraphQL-first)
+
+Notion as CMS (fast setup, less control)
+
+MDX in repo (no external CMS; simplest, but not “CMS”)
+
+If you want “real CMS” + design flexibility, Sanity is the best fit.
+
+Collections / schemas
+A) CaseStudy
+
+title (string)
+
+slug (slug)
+
+featured (boolean)
+
+coverImage (image + alt)
+
+thumbnail (image + alt)
+
+excerpt (text, 160–220 chars)
+
+disciplines (array: Brand, Marketing, Product, Presentation, Web, Motion)
+
+industry (string)
+
+year (number)
+
+client (string)
+
+role (string)
+
+timeline (string)
+
+tools (array of strings)
+
+links (optional: live URL, PDF, etc.)
+
+metrics (array of objects: label + value) e.g., “Time saved” “40%”
+
+content (rich blocks)
+
+Blocks supported: headings, paragraphs, bullet lists, callouts, pull quotes, image, gallery, video embed, divider
+
+seo (title, description, ogImage)
+
+B) Article
+
+title
+
+slug
+
+coverImage + alt
+
+excerpt
+
+category (single)
+
+tags (array)
+
+publishedAt (date)
+
+readingTime (computed or manual)
+
+content (rich blocks)
+
+seo
+
+C) PlayItem
+
+title
+
+slug
+
+coverMedia (image/video)
+
+shortDescription
+
+status (WIP / Shipped)
+
+tags (Motion, AI, Type, Code, Generative, 3D)
+
+date
+
+content (optional)
+
+D) Global settings
+
+siteTitle, siteDescription
+
+Social links
+
+Navigation labels
+
+Home page configuration (featured case studies IDs, featured articles IDs)
+
+Contact email + form settings
+
+6) CMS content starter pack (copy you can paste)
+Home hero (option A)
+
+Headline: Design that turns complex stories into clear, high-impact visuals.
+Sub: Brand systems, investor communications, and digital assets built for clarity, consistency, and speed.
+CTA1: View case studies
+CTA2: Contact
+
+Home hero (option B)
+
+Headline: I build design systems and campaigns that look premium and perform.
+Sub: From strategy to production—typography, layout, motion, and scalable templates.
+CTA1: Explore work
+CTA2: Let’s talk
+
+Capability bullets
+
+Brand systems + guidelines
+
+Campaign key visuals + ads
+
+Presentation design + templates
+
+Editorial layouts + reports
+
+Web landing pages (Figma → build-ready)
+
+Motion & micro-interactions
+
+Contact page copy
+
+Title: Let’s build something clear, bold, and effective.
+Body: Share your goal, timeline, and what you need designed. I’ll reply with next steps and a practical plan.
+
+7) Tech requirements (Vercel-friendly)
+Stack (recommended)
+
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+CMS: Sanity (or Contentful)
+
+Analytics: Vercel Analytics (optional)
+
+Core features
+
+Dynamic routes for case studies, blog posts, play items.
+
+SEO: metadata, OG images, sitemap.xml, robots.txt
+
+Image optimization pipeline
+
+CMS preview mode (optional)
+
+Form handling (simple API route or 3rd party like Formspree)
+
+Non-functional requirements
+
+Lighthouse: Perf 80+, SEO 90+, Accessibility 90+ (target)
+
+Responsive: mobile-first
+
+No broken layouts with long titles/excerpts
+
+Error handling: 404 pages for missing slugs
+
+8) Acceptance criteria (what “done” means)
+Home
+
+Can add/remove featured case studies from CMS without code.
+
+Shows latest 3 blog posts automatically.
+
+Fully responsive, no CLS issues.
+
+Case studies
+
+Index supports filtering by discipline.
+
+Detail page renders all rich blocks (images, quotes, galleries).
+
+“Next case study” section works.
+
+Blog
+
+Index shows categories.
+
+Article page supports images + headings + quotes.
+
+Related posts show based on tags/category.
+
+Play
+
+Can publish WIP experiments with media.
+
+Optional detail page works.
+
+Contact
+
+Form submissions arrive successfully.
+
+Spam reduced (honeypot + basic validation).
