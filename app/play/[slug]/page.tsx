@@ -1,18 +1,19 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getPlayItem, playItems } from "@/lib/content";
+import { getPlayItemData, getPlayItemsData } from "@/lib/cms";
 
 type PlayDetailPageProps = {
   params: Promise<{ slug: string }>;
 };
 
 export async function generateStaticParams() {
+  const playItems = await getPlayItemsData();
   return playItems.map((item) => ({ slug: item.slug }));
 }
 
 export async function generateMetadata({ params }: PlayDetailPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const item = getPlayItem(slug);
+  const item = await getPlayItemData(slug);
   if (!item) {
     return { title: "Play Item Not Found" };
   }
@@ -24,7 +25,7 @@ export async function generateMetadata({ params }: PlayDetailPageProps): Promise
 
 export default async function PlayDetailPage({ params }: PlayDetailPageProps) {
   const { slug } = await params;
-  const item = getPlayItem(slug);
+  const item = await getPlayItemData(slug);
   if (!item) {
     notFound();
   }

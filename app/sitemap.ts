@@ -1,9 +1,14 @@
 import type { MetadataRoute } from "next";
-import { articles, caseStudies, playItems } from "@/lib/content";
+import { getArticlesData, getCaseStudiesData, getPlayItemsData } from "@/lib/cms";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [caseStudies, articles, playItems] = await Promise.all([
+    getCaseStudiesData(),
+    getArticlesData(),
+    getPlayItemsData()
+  ]);
   const staticRoutes = ["", "/case-studies", "/play", "/blog", "/contact", "/about", "/privacy"];
 
   const staticEntries = staticRoutes.map((route) => ({

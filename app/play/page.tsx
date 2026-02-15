@@ -1,7 +1,8 @@
 import { PlayCard } from "@/components/play-card";
-import { playItems } from "@/lib/content";
+import { getPlayItemsData } from "@/lib/cms";
 
-export default function PlayPage() {
+export default async function PlayPage() {
+  const playItems = await getPlayItemsData();
   return (
     <div className="page-shell space-y-10">
       <section>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { CaseStudyCard } from "@/components/case-study-card";
-import { caseStudies, disciplines } from "@/lib/content";
+import { getCaseStudiesData, getDisciplineOptions } from "@/lib/cms";
 import { Discipline } from "@/lib/types";
 
 type CaseStudiesPageProps = {
@@ -12,6 +12,8 @@ type CaseStudiesPageProps = {
 };
 
 export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageProps) {
+  const caseStudies = await getCaseStudiesData();
+  const disciplines = getDisciplineOptions();
   const params = await searchParams;
   const selectedDiscipline = disciplines.includes(params.discipline as Discipline)
     ? (params.discipline as Discipline)

@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
-import { articleCategories, articles } from "@/lib/content";
+import { getArticleCategoryOptions, getArticlesData } from "@/lib/cms";
 
 type BlogPageProps = {
   searchParams: Promise<{ category?: string }>;
 };
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
+  const articles = await getArticlesData();
+  const articleCategories = getArticleCategoryOptions();
   const params = await searchParams;
   const selectedCategory = params.category;
 

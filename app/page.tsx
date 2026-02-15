@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { ArticleCard } from "@/components/article-card";
 import { CaseStudyCard } from "@/components/case-study-card";
-import { articles, caseStudies } from "@/lib/content";
+import { getArticlesData, getCaseStudiesData } from "@/lib/cms";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const caseStudies = await getCaseStudiesData();
+  const articles = await getArticlesData();
   const featuredCaseStudies = caseStudies.filter((item) => item.featured).slice(0, 6);
   const latestArticles = [...articles]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
