@@ -7,14 +7,17 @@ type ArticleCardProps = {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <article className="rounded-2xl border border-ink/10 bg-white p-5">
+    <article className="glass-panel rounded-3xl p-5 transition duration-300 hover:-translate-y-1">
       <p className="text-xs uppercase tracking-[0.16em] text-ink/60">
-        {article.category} • {new Date(article.publishedAt).toLocaleDateString()}
+        {article.category} | {new Date(article.publishedAt).toLocaleDateString()}
       </p>
-      <h3 className="mt-2 font-serif text-xl text-ink">{article.title}</h3>
+      <h3 className="mt-2 font-serif text-2xl leading-tight text-ink">{article.title}</h3>
       <p className="mt-2 text-sm text-ink/80">{article.excerpt}</p>
       <p className="mt-4 text-xs text-ink/70">{article.readingTime}</p>
-      <Link href={`/blog/${article.slug}`} className="mt-4 inline-block text-sm font-semibold text-rust">
+      <Link
+        href={`/blog/${article.slug}`}
+        className="mt-4 inline-block text-sm font-semibold uppercase tracking-[0.08em] text-[#1e6bd8]"
+      >
         Read article
       </Link>
     </article>

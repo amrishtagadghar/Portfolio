@@ -24,6 +24,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className="text-ink">
+        <div className="ambient-root" aria-hidden="true">
+          <div className="blob blob-one" />
+          <div className="blob blob-two" />
+          <div className="blob blob-three" />
+          <div className="ambient-grid" />
+        </div>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

@@ -3,7 +3,8 @@ Goal
 
 Create a design-first portfolio website that:
 
-Looks premium and editorial (strong typography, grid, motion, high craft).
+Looks very creative and Modern (strong typography, grid, motion, high craft).
+background rotating/moving gradient faded blobs. with red-pinkish, blues, greens and peach colors 
 
 Makes case studies easy to browse and convincing to read.
 

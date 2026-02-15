@@ -10,14 +10,18 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-20 border-b border-ink/10 bg-paper/95 backdrop-blur">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-ink">
+    <header className="sticky top-0 z-30 border-b border-ink/10 bg-paper/60 backdrop-blur-xl">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4">
+        <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-ink md:text-xl">
           Balance Portfolio
         </Link>
-        <nav className="flex items-center gap-5 text-sm font-medium">
+        <nav className="flex flex-wrap items-center justify-end gap-2 text-xs font-semibold uppercase tracking-[0.12em] md:gap-4 md:text-sm md:normal-case md:tracking-normal">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="text-ink/80 transition hover:text-rust">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full border border-transparent px-3 py-1 text-ink/80 transition hover:border-ink/20 hover:bg-white/60 hover:text-ink"
+            >
               {item.label}
             </Link>
           ))}
