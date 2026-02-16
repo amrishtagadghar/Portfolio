@@ -7,7 +7,7 @@ type CaseStudyCardProps = {
 
 export function CaseStudyCard({ study }: CaseStudyCardProps) {
   return (
-    <article className="glass-panel group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(23,18,38,0.14)]">
+    <article className="surface-card group rounded-3xl p-5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(23,18,38,0.14)]">
       <div
         className="mb-4 h-44 rounded-2xl bg-cover bg-center"
         style={{ backgroundImage: `url(${study.thumbnail || study.coverImage})` }}
@@ -17,7 +17,7 @@ export function CaseStudyCard({ study }: CaseStudyCardProps) {
       <p className="mt-2 text-sm text-ink/80">{study.excerpt}</p>
       <div className="mt-4 flex flex-wrap gap-2">
         {study.disciplines.map((discipline) => (
-          <span key={discipline} className="rounded-full border border-ink/20 bg-white/50 px-3 py-1 text-xs text-ink/75">
+          <span key={discipline} className="rounded-full border border-ink/20 bg-white/65 px-3 py-1 text-xs text-ink/75">
             {discipline}
           </span>
         ))}

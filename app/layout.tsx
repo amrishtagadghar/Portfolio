@@ -30,6 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="blob blob-one" />
           <div className="blob blob-two" />
           <div className="blob blob-three" />
+          <div className="blob blob-four" />
           <div className="ambient-grid" />
         </div>
         <SiteHeader />

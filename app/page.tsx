@@ -14,9 +14,9 @@ export default async function HomePage() {
   return (
     <div className="page-shell space-y-16">
       <section className="glass-panel relative overflow-hidden rounded-[2rem] p-8 md:p-12">
-        <div className="absolute right-4 top-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ff7f96] to-[#f6bea8] opacity-40 blur-2xl" />
-        <div className="absolute bottom-0 right-1/4 h-24 w-24 rounded-full bg-gradient-to-br from-[#5ca8ff] to-[#5dd3ad] opacity-40 blur-2xl" />
-        <p className="text-xs uppercase tracking-[0.2em] text-ink/70">Amrish Tagadghar | London</p>
+        <div className="absolute right-4 top-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ff7f96] to-[#f6bea8] opacity-45 blur-2xl" />
+        <div className="absolute bottom-0 right-1/4 h-24 w-24 rounded-full bg-gradient-to-br from-[#5ca8ff] to-[#5dd3ad] opacity-45 blur-2xl" />
+        <p className="hero-kicker">Amrish Tagadghar | London</p>
         <h1 className="hero-title mt-4 max-w-4xl font-serif">
           A curated collection of branding, motion, and editorial design.
         </h1>
@@ -26,13 +26,13 @@ export default async function HomePage() {
         <div className="mt-8 flex flex-wrap gap-4">
           <Link
             href="/case-studies"
-            className="rounded-full bg-ink px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-paper transition hover:-translate-y-0.5"
+            className="rounded-full bg-gradient-to-r from-[#18233f] to-[#2b2f58] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-paper transition hover:-translate-y-0.5"
           >
             View case studies
           </Link>
           <Link
             href="/contact"
-            className="rounded-full border border-ink/25 bg-white/50 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition hover:-translate-y-0.5"
+            className="rounded-full border border-ink/25 bg-white/60 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition hover:-translate-y-0.5"
           >
             Contact
           </Link>
@@ -69,15 +69,15 @@ export default async function HomePage() {
       <section className="glass-panel space-y-6 rounded-3xl p-8">
         <h2 className="section-title">Proof</h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
+          <article className="surface-card rounded-xl p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Industries</p>
             <p className="mt-2 text-sm text-ink/80">Finance, Asset Management, Technology</p>
           </article>
-          <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
+          <article className="surface-card rounded-xl p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Outcomes</p>
             <p className="mt-2 text-sm text-ink/80">40% production-time reduction on large campaign systems</p>
           </article>
-          <article className="rounded-xl border border-ink/10 bg-white/40 p-4">
+          <article className="surface-card rounded-xl p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Testimonials</p>
             <p className="mt-2 text-sm text-ink/80">
               Available for new work. Let&apos;s talk about the next big thing.

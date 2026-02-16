@@ -7,7 +7,7 @@ type ArticleCardProps = {
 
 export function ArticleCard({ article }: ArticleCardProps) {
   return (
-    <article className="glass-panel rounded-3xl p-5 transition duration-300 hover:-translate-y-1">
+    <article className="surface-card rounded-3xl p-5 transition duration-300 hover:-translate-y-1">
       <div className="mb-4 h-40 rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url(${article.coverImage})` }} />
       <p className="text-xs uppercase tracking-[0.16em] text-ink/60">
         {article.category} | {new Date(article.publishedAt).toLocaleDateString()}

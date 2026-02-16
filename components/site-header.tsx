@@ -10,7 +10,7 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-ink/10 bg-paper/60 backdrop-blur-xl">
+    <header className="sticky top-0 z-30 border-b border-ink/10 bg-paper/55 backdrop-blur-2xl">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4">
         <Link href="/" className="font-serif text-lg font-semibold tracking-tight text-ink md:text-xl">
           Amrish Tagadghar
@@ -20,7 +20,7 @@ export function SiteHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-transparent px-3 py-1 text-ink/80 transition hover:border-ink/20 hover:bg-white/60 hover:text-ink"
+              className="rounded-full border border-transparent px-3 py-1 text-ink/80 transition hover:-translate-y-0.5 hover:border-ink/20 hover:bg-white/70 hover:text-ink"
             >
               {item.label}
             </Link>

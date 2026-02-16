@@ -7,7 +7,7 @@ type PlayCardProps = {
 
 export function PlayCard({ item }: PlayCardProps) {
   return (
-    <article className="glass-panel rounded-3xl p-5 transition duration-300 hover:-translate-y-1">
+    <article className="surface-card rounded-3xl p-5 transition duration-300 hover:-translate-y-1">
       <div className="mb-4 h-40 rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url(${item.coverMedia})` }} />
       <div className="mb-3 flex items-center justify-between">
         <span className="rounded-full bg-ink px-3 py-1 text-xs uppercase tracking-[0.08em] text-paper">{item.status}</span>
