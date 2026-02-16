@@ -15,6 +15,7 @@ export default async function HomePage() {
     <div className="page-shell space-y-16">
       <section className="reference-hero">
         <div className="reference-grid" />
+        <div className="reference-pink" />
         <div className="reference-layer reference-layer-top" />
         <div className="reference-layer reference-layer-bottom" />
         <div className="reference-copy">
