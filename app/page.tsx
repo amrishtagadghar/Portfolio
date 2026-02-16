@@ -13,33 +13,20 @@ export default async function HomePage() {
 
   return (
     <div className="page-shell space-y-16">
-      <section className="glass-panel relative overflow-hidden rounded-[2rem] p-8 md:p-12">
-        <div className="absolute right-4 top-4 h-24 w-24 rounded-full bg-gradient-to-br from-[#ff7f96] to-[#f6bea8] opacity-45 blur-2xl" />
-        <div className="absolute bottom-0 right-1/4 h-24 w-24 rounded-full bg-gradient-to-br from-[#5ca8ff] to-[#5dd3ad] opacity-45 blur-2xl" />
-        <p className="hero-kicker">Amrish Tagadghar | London</p>
-        <h1 className="hero-title mt-4 max-w-4xl font-serif">
-          A curated collection of branding, motion, and editorial design.
-        </h1>
-        <p className="mt-5 max-w-2xl text-lg text-ink/80">
-          Crafted to connect, communicate, and leave a lasting impression.
-        </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <Link
-            href="/case-studies"
-            className="rounded-full bg-gradient-to-r from-[#18233f] to-[#2b2f58] px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] text-paper transition hover:-translate-y-0.5"
-          >
-            View case studies
-          </Link>
-          <Link
-            href="/contact"
-            className="rounded-full border border-ink/25 bg-white/60 px-6 py-3 text-sm font-semibold uppercase tracking-[0.08em] transition hover:-translate-y-0.5"
-          >
-            Contact
-          </Link>
+      <section className="reference-hero">
+        <div className="reference-grid" />
+        <div className="reference-layer reference-layer-top" />
+        <div className="reference-layer reference-layer-bottom" />
+        <div className="reference-copy">
+          <h1 className="reference-title">This is the best header of portfolio</h1>
+          <p className="reference-subtitle">I am a Creative Designer based in London</p>
         </div>
+        <Link href="#featured-work" className="reference-arrow" aria-label="Scroll to featured work">
+          <span>↓</span>
+        </Link>
       </section>
 
-      <section className="space-y-6">
+      <section id="featured-work" className="space-y-6">
         <h2 className="section-title">Featured case studies</h2>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {featuredCaseStudies.map((study) => (
