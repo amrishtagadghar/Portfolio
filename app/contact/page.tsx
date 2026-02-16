@@ -4,8 +4,8 @@ export default function ContactPage() {
       <section>
         <h1 className="section-title">Contact</h1>
         <p className="mt-3 max-w-2xl text-ink/80">
-          I&apos;m looking forward to hearing from you. If you prefer not to fill out forms, email me directly and
-          let&apos;s talk about the next big thing.
+          I&apos;m looking forward to hearing from you! If you prefer not to fill out forms, feel free to email me
+          directly and let&apos;s talk about the next big thing!
         </p>
         <p className="mt-4 text-sm text-ink/70">Availability: Currently available for new work.</p>
       </section>
@@ -15,7 +15,7 @@ export default function ContactPage() {
           <h2 className="font-serif text-2xl">Direct links</h2>
           <ul className="mt-4 space-y-2 text-sm text-ink/80">
             <li>Email: amrishst@gmail.com</li>
-            <li>LinkedIn: linkedin.com</li>
+            <li>LinkedIn: linkedin.com/in/amrish-tagadghar</li>
             <li>Dribbble and Behance profiles available</li>
           </ul>
         </article>

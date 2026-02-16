@@ -18,6 +18,7 @@ export type CaseStudy = {
   tools: string[];
   coverImage: string;
   thumbnail: string;
+  galleryImages?: string[];
   problem: string;
   goals: string[];
   process: string[];

@@ -19,8 +19,11 @@ export default async function HomePage() {
         <div className="reference-layer reference-layer-top" />
         <div className="reference-layer reference-layer-bottom" />
         <div className="reference-copy">
-          <h1 className="reference-title">This is the best header of portfolio</h1>
-          <p className="reference-subtitle">I am a Creative Designer based in London</p>
+          <h1 className="reference-title">Amrish Tagadghar Portfolio</h1>
+          <p className="reference-subtitle">
+            A curated collection of branding, motion, and editorial design crafted to connect, communicate, and leave
+            a lasting impression.
+          </p>
         </div>
         <Link href="#featured-work" className="reference-arrow" aria-label="Scroll to featured work">
           <span>↓</span>

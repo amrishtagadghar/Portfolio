@@ -1,4 +1,4 @@
-import { Article, CaseStudy, PlayItem } from "@/lib/types";
+﻿import { Article, CaseStudy, PlayItem } from "@/lib/types";
 
 export const caseStudies: CaseStudy[] = [
   {
@@ -13,8 +13,15 @@ export const caseStudies: CaseStudy[] = [
     role: "Lead Designer",
     timeline: "Campaign phase",
     tools: ["Figma", "Illustrator", "InDesign"],
-    coverImage: "https://framerusercontent.com/images/1hsY1R4ZWTz33u8W4EK0Nef6s.png",
-    thumbnail: "https://framerusercontent.com/images/hmTfVVgcpLtDymp9bgQgmeJmX70.png",
+    coverImage: "/framer-images/1hsY1R4ZWTz33u8W4EK0Nef6s.png",
+    thumbnail: "/framer-images/hmTfVVgcpLtDymp9bgQgmeJmX70.png",
+    galleryImages: [
+      "/framer-images/fCm6fDzASViIzgX0qWGeHEAmAzY.png",
+      "/framer-images/kxdEN47yZLf2inJBLWOSM10dm7g.png",
+      "/framer-images/L0IfIzHzLqKBC7D03UJx6XSbJfk.png",
+      "/framer-images/YkpqZNgtZZfZUDr9muy01FkytM.png",
+      "/framer-images/zFbFfF0ZSTSXY1VLzMkADthCFQ.png"
+    ],
     problem:
       "Amundi needed to communicate thematic investing clearly for retail investors while staying aligned with brand standards.",
     goals: [
@@ -59,8 +66,9 @@ export const caseStudies: CaseStudy[] = [
     role: "Designer",
     timeline: "Annual reporting cycle",
     tools: ["InDesign", "Illustrator"],
-    coverImage: "https://framerusercontent.com/images/AGksABZUSYRSFHnOesdHwzXNzE.jpg",
-    thumbnail: "https://framerusercontent.com/images/qvsPmpcwridV2M7Xt5EmIgHTTVQ.png",
+    coverImage: "/framer-images/AGksABZUSYRSFHnOesdHwzXNzE.jpg",
+    thumbnail: "/framer-images/qvsPmpcwridV2M7Xt5EmIgHTTVQ.png",
+    galleryImages: ["/framer-images/T6fptrfg4XwF744gGFZnxzB1lVw.png"],
     problem:
       "OBAM's shareholder letter needed to evolve from a routine document into a stronger investor communication touchpoint.",
     goals: [
@@ -100,8 +108,13 @@ export const caseStudies: CaseStudy[] = [
     role: "Lead Designer",
     timeline: "Strategic report cycle",
     tools: ["PowerPoint", "Illustrator"],
-    coverImage: "https://framerusercontent.com/images/EQhpx4yBe15zuURa00DWaVfVo.png",
-    thumbnail: "https://framerusercontent.com/images/ZFY9zNjme70tmNzCxadaU1OOxo.png",
+    coverImage: "/framer-images/EQhpx4yBe15zuURa00DWaVfVo.png",
+    thumbnail: "/framer-images/ZFY9zNjme70tmNzCxadaU1OOxo.png",
+    galleryImages: [
+      "/framer-images/FsPa76Wlgs1Hn3YCZblDPirMhcc.png",
+      "/framer-images/IWIvOoWeQfdzjiz4u3bALXkSp0.png",
+      "/framer-images/RjVWPlQ0sDzs3DaGmIyNUbPovRU.png"
+    ],
     problem:
       "Achmea IM needed a strategic report that balanced dense financial data with clear, persuasive business storytelling.",
     goals: [
@@ -142,8 +155,13 @@ export const caseStudies: CaseStudy[] = [
     role: "Lead Designer",
     timeline: "Brand rollout",
     tools: ["Figma", "Adobe Creative Suite"],
-    coverImage: "https://framerusercontent.com/images/AIS8TfapeKAM9ac5yPCWSvfUpZM.jpg",
-    thumbnail: "https://framerusercontent.com/images/Cge4EAtoC9xfGvgGVageI2tyI.png",
+    coverImage: "/framer-images/AIS8TfapeKAM9ac5yPCWSvfUpZM.jpg",
+    thumbnail: "/framer-images/Cge4EAtoC9xfGvgGVageI2tyI.png",
+    galleryImages: [
+      "/framer-images/NWKeO20b7RHLYO62GxmSvFyPhOQ.png",
+      "/framer-images/qwIiVYCaw4OEsDR6nKz6AgqiPOQ.png",
+      "/framer-images/RjVWPlQ0sDzs3DaGmIyNUbPovRU.png"
+    ],
     problem: "CREO required a cohesive brand presence across decks, web surfaces, and social media channels.",
     goals: [
       "Build a unified branding language across channels.",
@@ -172,8 +190,9 @@ export const caseStudies: CaseStudy[] = [
     role: "Lead Designer",
     timeline: "Campaign cycle",
     tools: ["Photoshop", "After Effects", "Figma"],
-    coverImage: "https://framerusercontent.com/images/5MdDId2SJ8767YRTk03eIFUWgA.png",
-    thumbnail: "https://framerusercontent.com/images/9g0dWT7uYTHGGRn4zTKtco7GM7Q.png",
+    coverImage: "/framer-images/5MdDId2SJ8767YRTk03eIFUWgA.png",
+    thumbnail: "/framer-images/9g0dWT7uYTHGGRn4zTKtco7GM7Q.png",
+    galleryImages: ["/framer-images/qwIiVYCaw4OEsDR6nKz6AgqiPOQ.png"],
     problem: "Nikko needed stronger social storytelling for a specialized equity strategy.",
     goals: [
       "Increase campaign visibility across social platforms.",
@@ -201,8 +220,13 @@ export const caseStudies: CaseStudy[] = [
     role: "Principal Designer",
     timeline: "Long-form report production",
     tools: ["InDesign", "Illustrator"],
-    coverImage: "https://framerusercontent.com/images/d3vXZHVvLoGb8gXshMWARhO5bf8.png",
-    thumbnail: "https://framerusercontent.com/images/OdabbR0tPNlqv8gkqmT46bwa5I.png",
+    coverImage: "/framer-images/d3vXZHVvLoGb8gXshMWARhO5bf8.png",
+    thumbnail: "/framer-images/OdabbR0tPNlqv8gkqmT46bwa5I.png",
+    galleryImages: [
+      "/framer-images/ljqk1hJjQ2X7WRbaNrAhPuVOYg.png",
+      "/framer-images/YkpqZNgtZZfZUDr9muy01FkytM.png",
+      "/framer-images/5MdDId2SJ8767YRTk03eIFUWgA.png"
+    ],
     problem: "ASN needed a high-volume impact report that stayed clear, visually consistent, and engaging.",
     goals: [
       "Define a consistent visual tone for a 100+ page document.",
@@ -225,33 +249,33 @@ export const articles: Article[] = [
     title: "Big-Picture Vs Pixel-Perfect? A Designer's Guide to Strategic Project Flow",
     slug: "big-picture-vs-pixel-perfect",
     excerpt:
-      "In this blog, I explore the tension between zooming out for strategy and zooming in for craft in the design process.",
+      "In this blog, I explore the ongoing tension between zooming out for strategy and zooming in for detail in the design process.",
     category: "Process",
     tags: ["strategy", "craft", "design-process"],
     publishedAt: "2026-01-19",
     readingTime: "8 min read",
-    coverImage: "https://framerusercontent.com/images/BKTvQfpjYrncEz4CocgS0Ys8TbI.jpg",
+    coverImage: "/framer-images/BKTvQfpjYrncEz4CocgS0Ys8TbI.jpg",
     content: [
-      "Should you start with the brand vision or the button padding? The answer changes by context, team maturity, and project risk.",
-      "A top-down approach helps define structure, goals, and user journeys. A bottom-up approach sharpens details that build trust and polish.",
-      "The best outcomes come from balancing both modes intentionally, so the design is not only beautiful but strategically purposeful."
+      "Should you start with the brand vision or the button padding? I break down when to take a top-down approach, focusing on structure, goals, and user journeys, and when to go bottom-up, crafting details that build into something bigger.",
+      "With real-world examples, pros and cons, and a practical tone, this guide helps designers find the right balance between perfection and perspective.",
+      "The goal is simple: your design should not just be beautiful, but brilliantly purposeful."
     ]
   }
 ];
 
 export const playItems: PlayItem[] = [
   {
-    title: "Sara AI Animation",
+    title: "Sara AI animation",
     slug: "sara-ai-animation",
-    shortDescription: "Animated character design for the SARA AI interface using scenario-based motion concepts.",
+    shortDescription: "Animated Character Design for SARA AI Interface",
     status: "Shipped",
     tags: ["Motion", "AI", "Type"],
     date: "2020-01-01",
-    coverMedia: "https://framerusercontent.com/images/Fafxa7NGDgnuuJaW5HrDpUoK4Q.gif",
+    coverMedia: "/framer-images/Fafxa7NGDgnuuJaW5HrDpUoK4Q.gif",
     content: [
-      "For SARA AI, I developed three mascot animation concepts: sleeping, waving, and reading.",
-      "Using Adobe After Effects, I transformed a single base mascot into expressive motion states with natural timing and character.",
-      "The client was thrilled with the final result, and the project was completed efficiently."
+      "For the SARA AI project, I was tasked with bringing the existing mascot to life through a series of engaging animations.",
+      "I developed concepts for three distinct animations: one where the mascot is sleeping, another waving its hand, and a third reading a book.",
+      "Starting from a single basic mascot design, I visualized and animated these scenarios in Adobe After Effects, ensuring each movement felt natural and engaging."
     ]
   }
 ];
@@ -270,3 +294,4 @@ export function getArticle(slug: string) {
 export function getPlayItem(slug: string) {
   return playItems.find((item) => item.slug === slug);
 }
+

@@ -6,7 +6,8 @@ export function SiteFooter() {
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2">
         <div>
           <p className="font-serif text-2xl tracking-tight">
-            I&apos;m currently available for new work. Let&apos;s talk about the next big thing.
+            I&apos;m currently available for new work, let me know if you need a digital designer. I&apos;d love to
+            talk about the next big thing!
           </p>
           <p className="mt-3 text-sm text-paper/80">Email: amrishst@gmail.com</p>
         </div>
