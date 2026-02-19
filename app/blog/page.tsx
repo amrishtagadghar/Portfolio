@@ -25,16 +25,16 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </p>
       </section>
 
-      <section className="rounded-2xl border border-ink/10 bg-white p-6">
+      <section className="surface-card rounded-[32px] p-6">
         <div className="flex flex-wrap gap-2">
-          <Link href="/blog" className="rounded-full border border-ink/20 px-3 py-1 text-sm">
+          <Link href="/blog" className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm">
             All
           </Link>
           {articleCategories.map((category) => (
             <Link
               key={category}
               href={`/blog?category=${encodeURIComponent(category)}`}
-              className="rounded-full border border-ink/20 px-3 py-1 text-sm"
+              className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm"
             >
               {category}
             </Link>

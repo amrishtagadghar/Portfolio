@@ -5,15 +5,32 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#10131A",
-        paper: "#F6F3EC",
-        sand: "#DED4C5",
-        rust: "#A5482A",
-        leaf: "#2B554A"
+        ink: "#0B0F1A",
+        "ink-muted": "#3B4254",
+        "ink-soft": "#6B7280",
+        paper: "#F7F8FB",
+        mist: "#EEF1F7",
+        sky: "#BFD9FF",
+        lavender: "#D7C6FF",
+        blush: "#F7B7D2",
+        peach: "#FFD2B8",
+        mint: "#BFF3DD",
+        focus: "#3B82F6",
+        rust: "#E8709F",
+        leaf: "#6ABFA3"
       },
       fontFamily: {
-        sans: ["Aileron", "Avenir Next", "Segoe UI", "sans-serif"],
-        serif: ["Iowan Old Style", "Times New Roman", "serif"]
+        sans: ["Aileron", "Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+        serif: ["Aileron", "Inter", "system-ui", "sans-serif"]
+      },
+      borderRadius: {
+        md: "20px",
+        lg: "32px",
+        xl: "48px",
+        hero: "64px"
+      },
+      boxShadow: {
+        glass: "0 10px 40px rgba(11, 15, 26, 0.10), 0 2px 10px rgba(11, 15, 26, 0.06)"
       }
     }
   },

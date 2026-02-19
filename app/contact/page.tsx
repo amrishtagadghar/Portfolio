@@ -11,17 +11,17 @@ export default function ContactPage() {
       </section>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <article className="rounded-2xl border border-ink/10 bg-white p-6">
-          <h2 className="font-serif text-2xl">Direct links</h2>
-          <ul className="mt-4 space-y-2 text-sm text-ink/80">
+        <article className="surface-card rounded-[32px] p-6">
+          <h2 className="font-sans text-2xl">Direct links</h2>
+          <ul className="mt-4 space-y-2 text-sm text-ink-muted">
             <li>Email: amrishst@gmail.com</li>
             <li>LinkedIn: linkedin.com/in/amrish-tagadghar</li>
             <li>Dribbble and Behance profiles available</li>
           </ul>
         </article>
 
-        <form action="/api/contact" method="post" className="space-y-4 rounded-2xl border border-ink/10 bg-white p-6">
-          <h2 className="font-serif text-2xl">Contact form</h2>
+        <form action="/api/contact" method="post" className="surface-card space-y-4 rounded-[32px] p-6">
+          <h2 className="font-sans text-2xl">Contact form</h2>
           <input
             type="text"
             name="company"
@@ -32,17 +32,31 @@ export default function ContactPage() {
           />
           <label className="block">
             <span className="mb-1 block text-sm">Name</span>
-            <input name="name" required className="w-full rounded-lg border border-ink/20 px-3 py-2" />
+            <input
+              name="name"
+              required
+              className="w-full rounded-xl border border-white/70 bg-white/50 px-3 py-2 text-ink"
+            />
           </label>
           <label className="block">
             <span className="mb-1 block text-sm">Email</span>
-            <input type="email" name="email" required className="w-full rounded-lg border border-ink/20 px-3 py-2" />
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full rounded-xl border border-white/70 bg-white/50 px-3 py-2 text-ink"
+            />
           </label>
           <label className="block">
             <span className="mb-1 block text-sm">Message</span>
-            <textarea name="message" required rows={5} className="w-full rounded-lg border border-ink/20 px-3 py-2" />
+            <textarea
+              name="message"
+              required
+              rows={5}
+              className="w-full rounded-xl border border-white/70 bg-white/50 px-3 py-2 text-ink"
+            />
           </label>
-          <button type="submit" className="rounded-full bg-ink px-5 py-2 text-sm font-semibold text-paper">
+          <button type="submit" className="rounded-full border border-white/70 bg-white/45 px-5 py-2 text-sm font-semibold text-ink">
             Send
           </button>
         </form>
@@ -50,3 +64,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

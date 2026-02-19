@@ -2,27 +2,28 @@ import Link from "next/link";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-16 border-t border-ink/20 bg-gradient-to-r from-[#131a31] via-[#191c37] to-[#1f1f3e] text-paper">
+    <footer className="mt-16 border-t border-white/50 bg-white/30 backdrop-blur-xl">
       <div className="mx-auto grid w-full max-w-6xl gap-6 px-6 py-12 md:grid-cols-2">
         <div>
-          <p className="font-serif text-2xl tracking-tight">
+          <p className="font-sans text-2xl tracking-tight text-ink">
             I&apos;m currently available for new work, let me know if you need a digital designer. I&apos;d love to
             talk about the next big thing!
           </p>
-          <p className="mt-3 text-sm text-paper/80">Email: amrishst@gmail.com</p>
+          <p className="mt-3 text-sm text-ink-muted">Email: amrishst@gmail.com</p>
         </div>
         <div className="text-sm md:text-right">
           <div className="space-x-4 uppercase tracking-[0.1em]">
-            <Link href="/about" className="text-paper/80 hover:text-white">
+            <Link href="/about" className="text-ink-muted hover:text-ink">
               About
             </Link>
-            <Link href="/privacy" className="text-paper/80 hover:text-white">
+            <Link href="/privacy" className="text-ink-muted hover:text-ink">
               Privacy
             </Link>
           </div>
-          <p className="mt-3 text-paper/60">LinkedIn / Dribbble / Behance</p>
+          <p className="mt-3 text-ink-soft">LinkedIn / Dribbble / Behance</p>
         </div>
       </div>
     </footer>
   );
 }
+

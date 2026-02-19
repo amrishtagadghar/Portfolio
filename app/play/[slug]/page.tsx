@@ -34,16 +34,19 @@ export default async function PlayDetailPage({ params }: PlayDetailPageProps) {
     <div className="page-shell space-y-8">
       <header className="space-y-3">
         <p className="text-xs uppercase tracking-[0.16em] text-ink/60">
-          {item.status} • {new Date(item.date).toLocaleDateString()}
+          {item.status} {" | "} {new Date(item.date).toLocaleDateString()}
         </p>
         <h1 className="section-title">{item.title}</h1>
-        <p className="max-w-2xl text-ink/80">{item.shortDescription}</p>
+        <p className="max-w-2xl text-ink-muted">{item.shortDescription}</p>
       </header>
 
-      <section className="rounded-2xl border border-ink/10 bg-white p-6">
-        <h2 className="font-serif text-2xl">Notes</h2>
-        <div className="mt-4 h-[280px] w-full rounded-2xl bg-cover bg-center md:h-[400px]" style={{ backgroundImage: `url(${item.coverMedia})` }} />
-        <div className="mt-4 space-y-3 text-ink/80">
+      <section className="surface-card rounded-[32px] p-6">
+        <h2 className="font-sans text-2xl">Notes</h2>
+        <div
+          className="mt-4 h-[280px] w-full rounded-2xl bg-cover bg-center md:h-[400px]"
+          style={{ backgroundImage: `url(${item.coverMedia})` }}
+        />
+        <div className="mt-4 space-y-3 text-ink-muted">
           {(item.content ?? ["Detailed write-up coming soon."]).map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}

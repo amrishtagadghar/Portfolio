@@ -1,0 +1,292 @@
+```json
+{
+  "meta": {
+    "name": "Modern Pastel Glass",
+    "version": "1.0.0",
+    "description": "A modern, airy pastel system with soft gradients, subtle grid lines, and rounded ‘blob’ containers similar to the reference image.",
+    "useCases": ["portfolio", "creative studio site", "product landing", "presentation UI"]
+  },
+  "brandPrinciples": [
+    {
+      "name": "Soft clarity",
+      "description": "High readability on gentle backgrounds. Keep hierarchy strong; keep decoration subtle."
+    },
+    {
+      "name": "Rounded confidence",
+      "description": "Large-radius containers and corner-blobs create a friendly, contemporary identity."
+    },
+    {
+      "name": "Lightweight depth",
+      "description": "Use glass blur + low-opacity gradients for depth, never heavy shadows."
+    }
+  ],
+  "color": {
+    "mode": "light",
+    "palette": {
+      "neutrals": {
+        "white": { "hex": "#FFFFFF", "role": "base" },
+        "paper": { "hex": "#F7F8FB", "role": "surface" },
+        "mist": { "hex": "#EEF1F7", "role": "surfaceAlt" },
+        "gridLine": { "hex": "#0B0F1A", "role": "grid", "alphaSuggested": 0.06 }
+      },
+      "text": {
+        "ink": { "hex": "#0B0F1A", "role": "primaryText" },
+        "inkMuted": { "hex": "#3B4254", "role": "secondaryText" },
+        "inkSoft": { "hex": "#6B7280", "role": "tertiaryText" }
+      },
+      "pastels": {
+        "sky": { "hex": "#BFD9FF", "role": "accentCool" },
+        "lavender": { "hex": "#D7C6FF", "role": "accentCoolAlt" },
+        "blush": { "hex": "#F7B7D2", "role": "accentWarm" },
+        "peach": { "hex": "#FFD2B8", "role": "accentWarmAlt" },
+        "mint": { "hex": "#BFF3DD", "role": "accentFresh" }
+      },
+      "system": {
+        "focus": { "hex": "#3B82F6", "role": "focusRing" },
+        "success": { "hex": "#22C55E", "role": "success" },
+        "warning": { "hex": "#F59E0B", "role": "warning" },
+        "danger": { "hex": "#EF4444", "role": "danger" }
+      }
+    },
+    "gradients": {
+      "heroBackground": {
+        "type": "linear",
+        "angle": 135,
+        "stops": [
+          { "color": "#BFD9FF", "position": 0, "alpha": 0.65 },
+          { "color": "#D7C6FF", "position": 35, "alpha": 0.55 },
+          { "color": "#F7B7D2", "position": 65, "alpha": 0.55 },
+          { "color": "#F7F8FB", "position": 100, "alpha": 1.0 }
+        ],
+        "usage": ["page background", "hero area"]
+      },
+      "cardGlow": {
+        "type": "radial",
+        "shape": "ellipse",
+        "position": "center",
+        "stops": [
+          { "color": "#F7B7D2", "position": 0, "alpha": 0.35 },
+          { "color": "#D7C6FF", "position": 45, "alpha": 0.25 },
+          { "color": "#BFD9FF", "position": 75, "alpha": 0.18 },
+          { "color": "#FFFFFF", "position": 100, "alpha": 0.0 }
+        ],
+        "usage": ["behind primary card", "behind CTA cluster"]
+      }
+    },
+    "contrastGuidelines": {
+      "minimumTextContrast": {
+        "body": "WCAG AA (4.5:1) recommended",
+        "largeText": "WCAG AA (3:1) minimum"
+      },
+      "rules": [
+        "Never place body text directly on the brightest gradient center without a surface layer.",
+        "Use Ink (#0B0F1A) for titles; InkMuted (#3B4254) for subtext; avoid pure gray on pastels."
+      ]
+    }
+  },
+  "typography": {
+    "primaryFont": {
+      "family": "Aileron",
+      "fallback": ["Inter", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+      "weights": { "regular": 400, "medium": 500, "semibold": 600, "bold": 700 }
+    },
+    "typeScale": {
+      "h1": { "fontSizePx": 64, "lineHeight": 1.0, "letterSpacingEm": -0.02, "weight": 700 },
+      "h2": { "fontSizePx": 44, "lineHeight": 1.05, "letterSpacingEm": -0.02, "weight": 700 },
+      "h3": { "fontSizePx": 32, "lineHeight": 1.15, "letterSpacingEm": -0.01, "weight": 700 },
+      "bodyLg": { "fontSizePx": 18, "lineHeight": 1.6, "letterSpacingEm": 0.0, "weight": 400 },
+      "body": { "fontSizePx": 16, "lineHeight": 1.6, "letterSpacingEm": 0.0, "weight": 400 },
+      "caption": { "fontSizePx": 13, "lineHeight": 1.45, "letterSpacingEm": 0.01, "weight": 400 }
+    },
+    "usageRules": [
+      "Keep hero headlines short (4–8 words).",
+      "Use one headline weight (Bold) and one body weight (Regular) for a clean system.",
+      "Avoid all-caps in large headings; use sentence case."
+    ]
+  },
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "maxWidthPx": 1200,
+      "gutterPx": 24,
+      "marginPx": 24,
+      "baselineGridPx": 8
+    },
+    "backgroundGrid": {
+      "enabled": true,
+      "lineWidthPx": 1,
+      "cellSizePx": 80,
+      "colorToken": "color.palette.neutrals.gridLine",
+      "alpha": 0.06,
+      "usage": ["hero background", "section backgrounds"],
+      "rules": ["Keep grid subtle. If content density increases, reduce alpha to 0.04."]
+    },
+    "spacing": {
+      "scalePx": [4, 8, 12, 16, 24, 32, 48, 64, 96],
+      "sectionPaddingPx": { "mobile": 48, "desktop": 80 }
+    }
+  },
+  "shapeLanguage": {
+    "signatureShape": {
+      "name": "Rounded Blob Container",
+      "description": "Large rounded rectangle with one or two oversized corner radii to create a soft ‘blob’ silhouette.",
+      "radii": {
+        "defaultPx": 48,
+        "heroContainerPx": 64,
+        "blobCornerMultiplier": 1.6,
+        "example": {
+          "topLeftPx": 64,
+          "topRightPx": 64,
+          "bottomRightPx": 96,
+          "bottomLeftPx": 64
+        }
+      }
+    },
+    "shapeTokens": {
+      "radiusSmPx": 12,
+      "radiusMdPx": 20,
+      "radiusLgPx": 32,
+      "radiusXlPx": 48,
+      "radiusHeroPx": 64
+    },
+    "decorativeShapes": [
+      {
+        "name": "Soft Inset Curve",
+        "description": "An inner cut curve that suggests depth within a container (like a subtle corner indentation).",
+        "usage": ["hero container", "feature cards"],
+        "opacity": 0.15
+      },
+      {
+        "name": "Circular CTA Button",
+        "description": "A floating circle used for down-arrow or primary micro-CTA.",
+        "sizePx": 72,
+        "border": { "widthPx": 1, "color": "#FFFFFF", "alpha": 0.35 }
+      }
+    ]
+  },
+  "surfaces": {
+    "glassmorphism": {
+      "enabled": true,
+      "backdropBlurPx": 18,
+      "background": { "color": "#FFFFFF", "alpha": 0.35 },
+      "border": { "widthPx": 1, "color": "#FFFFFF", "alpha": 0.45 },
+      "shadow": {
+        "enabled": true,
+        "layers": [
+          { "yPx": 10, "blurPx": 40, "spreadPx": 0, "color": "#0B0F1A", "alpha": 0.10 },
+          { "yPx": 2, "blurPx": 10, "spreadPx": 0, "color": "#0B0F1A", "alpha": 0.06 }
+        ]
+      },
+      "rules": [
+        "Use glass surfaces over gradients to protect text readability.",
+        "Avoid strong drop shadows; keep alpha low."
+      ]
+    },
+    "cardStyles": {
+      "primaryCard": {
+        "surface": "glassmorphism",
+        "paddingPx": { "mobile": 24, "desktop": 40 },
+        "radiusToken": "shapeLanguage.shapeTokens.radiusHeroPx"
+      },
+      "secondaryCard": {
+        "surface": "glassmorphism",
+        "paddingPx": { "mobile": 18, "desktop": 24 },
+        "radiusToken": "shapeLanguage.shapeTokens.radiusXlPx"
+      }
+    }
+  },
+  "components": {
+    "hero": {
+      "structure": ["background gradient + subtle grid", "blob container", "headline", "subheadline", "floating circular down-arrow CTA"],
+      "headlineMaxWidthCh": 18,
+      "subheadlineMaxWidthCh": 42,
+      "alignment": "left",
+      "recommendedSpacingPx": { "headlineToSubheadline": 16, "contentToCTA": 28 }
+    },
+    "button": {
+      "primary": {
+        "style": "glass",
+        "heightPx": 44,
+        "paddingXpx": 18,
+        "radiusToken": "shapeLanguage.shapeTokens.radiusLgPx",
+        "textWeight": 600
+      },
+      "iconCircle": {
+        "diameterPx": 72,
+        "radiusPx": 999,
+        "surface": "glassmorphism",
+        "iconSizePx": 22
+      }
+    },
+    "links": {
+      "default": { "colorToken": "color.palette.text.ink", "underline": "onHover" },
+      "muted": { "colorToken": "color.palette.text.inkMuted", "underline": "never" }
+    }
+  },
+  "imagery": {
+    "style": "Minimal, editorial, and clean. Prefer ample negative space and soft lighting.",
+    "do": [
+      "Use subtle overlays to harmonize imagery with the pastel system.",
+      "Keep backgrounds uncluttered so typography remains the focal point."
+    ],
+    "dont": ["Use high-saturation neon colors", "Use heavy grain or aggressive textures"]
+  },
+  "motion": {
+    "easing": {
+      "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "gentle": "cubic-bezier(0.16, 1, 0.3, 1)"
+    },
+    "durationsMs": { "micro": 150, "standard": 240, "slow": 420 },
+    "patterns": [
+      {
+        "name": "Float",
+        "description": "Subtle vertical drift for decorative shapes and the circular CTA.",
+        "amplitudePx": 6,
+        "durationMs": 2400
+      },
+      {
+        "name": "Fade + Lift",
+        "description": "Cards fade in and lift slightly on load/scroll.",
+        "translateYPx": 10,
+        "durationMs": 420
+      }
+    ]
+  },
+  "accessibility": {
+    "focusStyle": {
+      "ringWidthPx": 3,
+      "ringColorToken": "color.palette.system.focus",
+      "ringOffsetPx": 2
+    },
+    "textSafety": [
+      "On gradients, place text on a glass surface at >= 0.30 alpha.",
+      "Use Ink for headings. If a section feels low-contrast, increase surface alpha before changing text color."
+    ],
+    "minimumTapTargetsPx": 44
+  },
+  "tokens": {
+    "cssVariables": {
+      "--color-ink": "#0B0F1A",
+      "--color-paper": "#F7F8FB",
+      "--color-sky": "#BFD9FF",
+      "--color-lavender": "#D7C6FF",
+      "--color-blush": "#F7B7D2",
+      "--grid-alpha": 0.06,
+      "--radius-hero": "64px",
+      "--blur-glass": "18px"
+    }
+  },
+  "examples": {
+    "heroCopyTemplates": [
+      {
+        "headline": "Design systems that scale fast",
+        "subheadline": "I build brand and marketing experiences that stay consistent across teams, channels, and timelines."
+      },
+      {
+        "headline": "Modern brand design, made practical",
+        "subheadline": "Clear hierarchy, strong craft, and reusable systems for real-world production."
+      }
+    ]
+  }
+}
+```

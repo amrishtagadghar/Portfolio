@@ -26,7 +26,7 @@ export default async function HomePage() {
           </p>
         </div>
         <Link href="#featured-work" className="reference-arrow" aria-label="Scroll to featured work">
-          <span>↓</span>
+          <span>&darr;</span>
         </Link>
       </section>
 
@@ -39,7 +39,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="glass-panel space-y-6 rounded-3xl p-8">
+      <section className="glass-panel space-y-6 rounded-[48px] p-8">
         <h2 className="section-title">Capabilities</h2>
         <div className="flex flex-wrap gap-3 text-sm">
           {[
@@ -50,27 +50,27 @@ export default async function HomePage() {
             "Project and client communication",
             "Design leadership"
           ].map((item) => (
-            <span key={item} className="rounded-full border border-ink/20 bg-white/45 px-4 py-2">
+            <span key={item} className="rounded-full border border-white/60 bg-white/35 px-4 py-2 text-ink-muted">
               {item}
             </span>
           ))}
         </div>
       </section>
 
-      <section className="glass-panel space-y-6 rounded-3xl p-8">
+      <section className="glass-panel space-y-6 rounded-[48px] p-8">
         <h2 className="section-title">Proof</h2>
         <div className="grid gap-4 md:grid-cols-3">
-          <article className="surface-card rounded-xl p-4">
+          <article className="surface-card rounded-[20px] p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Industries</p>
-            <p className="mt-2 text-sm text-ink/80">Finance, Asset Management, Technology</p>
+            <p className="mt-2 text-sm text-ink-muted">Finance, Asset Management, Technology</p>
           </article>
-          <article className="surface-card rounded-xl p-4">
+          <article className="surface-card rounded-[20px] p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Outcomes</p>
-            <p className="mt-2 text-sm text-ink/80">40% production-time reduction on large campaign systems</p>
+            <p className="mt-2 text-sm text-ink-muted">40% production-time reduction on large campaign systems</p>
           </article>
-          <article className="surface-card rounded-xl p-4">
+          <article className="surface-card rounded-[20px] p-4">
             <p className="text-xs uppercase tracking-[0.12em] text-ink/60">Testimonials</p>
-            <p className="mt-2 text-sm text-ink/80">
+            <p className="mt-2 text-sm text-ink-muted">
               Available for new work. Let&apos;s talk about the next big thing.
             </p>
           </article>

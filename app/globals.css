@@ -4,14 +4,20 @@
 
 :root {
   color-scheme: light;
-  --ink: #0f1426;
-  --paper: #fbf8f3;
-  --line: rgba(15, 20, 38, 0.14);
-  --blob-red: #ff4d79;
-  --blob-peach: #ffc59d;
-  --blob-blue: #3f8fff;
-  --blob-green: #2fc58f;
-  --blob-violet: #8f7bff;
+  --ink: #0b0f1a;
+  --ink-muted: #3b4254;
+  --ink-soft: #6b7280;
+  --paper: #f7f8fb;
+  --mist: #eef1f7;
+  --line: rgba(11, 15, 26, 0.1);
+  --grid-line: rgba(11, 15, 26, 0.06);
+  --glass-bg: rgba(255, 255, 255, 0.35);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --blur-glass: 18px;
+  --radius-hero: 64px;
+  --radius-xl: 48px;
+  --radius-lg: 32px;
+  --radius-md: 20px;
 }
 
 * {
@@ -27,17 +33,28 @@ body {
 
 body {
   background:
-    radial-gradient(circle at 20% 0%, #fff2e7 0%, transparent 40%),
-    radial-gradient(circle at 100% 10%, #e8efff 0%, transparent 42%),
+    linear-gradient(
+      135deg,
+      rgba(191, 217, 255, 0.65) 0%,
+      rgba(215, 198, 255, 0.55) 35%,
+      rgba(247, 183, 210, 0.55) 65%,
+      rgba(247, 248, 251, 1) 100%
+    ),
     var(--paper);
   color: var(--ink);
-  font-family: "Aileron", "Avenir Next", "Segoe UI", sans-serif;
-  line-height: 1.55;
+  font-family: "Aileron", "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
 }
 
 .ambient-root {
@@ -52,19 +69,19 @@ a {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(15, 20, 38, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 20, 38, 0.03) 1px, transparent 1px);
-  background-size: 46px 46px;
-  mask-image: radial-gradient(circle at center, black 48%, transparent 95%);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(circle at center, black 56%, transparent 95%);
 }
 
 .blob {
   position: absolute;
   border-radius: 999px;
-  filter: blur(80px);
-  opacity: 0.46;
+  filter: blur(88px);
+  opacity: 0.34;
   transform-origin: center center;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -76,7 +93,7 @@ a {
   min-height: 280px;
   left: -10vw;
   top: -14vw;
-  background: radial-gradient(circle at 35% 35%, var(--blob-red), var(--blob-peach));
+  background: radial-gradient(circle at 35% 35%, #f7b7d2, #ffd2b8);
   animation-name: drift-a;
   animation-duration: 18s;
 }
@@ -88,7 +105,7 @@ a {
   min-height: 240px;
   right: -12vw;
   top: 10vh;
-  background: radial-gradient(circle at 30% 30%, var(--blob-blue), #b7d9ff);
+  background: radial-gradient(circle at 30% 30%, #bfd9ff, #d7c6ff);
   animation-name: drift-b;
   animation-duration: 22s;
 }
@@ -100,7 +117,7 @@ a {
   min-height: 260px;
   left: 24vw;
   bottom: -22vw;
-  background: radial-gradient(circle at 40% 45%, var(--blob-green), #bdeed7);
+  background: radial-gradient(circle at 40% 45%, #bff3dd, #bfd9ff);
   animation-name: drift-c;
   animation-duration: 20s;
 }
@@ -112,7 +129,7 @@ a {
   min-height: 220px;
   right: 18vw;
   bottom: -8vw;
-  background: radial-gradient(circle at 40% 45%, var(--blob-violet), #dfd7ff);
+  background: radial-gradient(circle at 40% 45%, #d7c6ff, #f7b7d2);
   animation-name: drift-d;
   animation-duration: 24s;
 }
@@ -153,74 +170,62 @@ a {
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-6px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
 .page-shell {
   @apply mx-auto w-full max-w-6xl px-6 py-14;
 }
 
 .section-title {
-  @apply font-serif text-3xl tracking-tight text-ink md:text-5xl;
-  letter-spacing: -0.025em;
-}
-
-.glass-panel {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.48));
-  backdrop-filter: blur(14px);
-  border: 1px solid var(--line);
-  box-shadow:
-    0 14px 44px rgba(29, 19, 52, 0.1),
-    0 2px 0 rgba(255, 255, 255, 0.7) inset;
-}
-
-.surface-card {
-  border: 1px solid rgba(15, 20, 38, 0.13);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.82), rgba(249, 245, 255, 0.55));
-  box-shadow: 0 12px 36px rgba(30, 21, 60, 0.08);
-}
-
-.hero-title {
-  font-size: clamp(2.4rem, 6.2vw, 5.6rem);
-  line-height: 0.92;
-  letter-spacing: -0.03em;
+  font-size: clamp(2rem, 5vw, 3.95rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 700;
   text-wrap: balance;
 }
 
-.hero-kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 20, 38, 0.16);
-  background: rgba(255, 255, 255, 0.55);
-  padding: 0.35rem 0.8rem;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(15, 20, 38, 0.75);
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-glass));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 40px rgba(11, 15, 26, 0.1), 0 2px 10px rgba(11, 15, 26, 0.06);
 }
 
-.hero-kicker::before {
-  content: "";
-  height: 0.45rem;
-  width: 0.45rem;
-  border-radius: 999px;
-  background: linear-gradient(130deg, #ff4d79, #3f8fff);
+.surface-card {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.28));
+  backdrop-filter: blur(var(--blur-glass));
+  box-shadow: 0 10px 40px rgba(11, 15, 26, 0.1), 0 2px 10px rgba(11, 15, 26, 0.06);
 }
 
 .reference-hero {
   position: relative;
-  min-height: 500px;
+  min-height: 540px;
   overflow: hidden;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  background: linear-gradient(155deg, #bad4e3 0%, #dfc8dd 56%, #9fcce0 100%);
+  border-radius: var(--radius-hero);
+  border: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(var(--blur-glass));
+  box-shadow: 0 10px 40px rgba(11, 15, 26, 0.1), 0 2px 10px rgba(11, 15, 26, 0.06);
 }
 
 .reference-grid {
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(to right, rgba(15, 20, 38, 0.06) 1px, transparent 1px);
-  background-size: 86px 86px;
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
 .reference-pink {
@@ -229,16 +234,16 @@ a {
   bottom: 0;
   z-index: 1;
   height: 58%;
-  width: 48%;
-  border-top-right-radius: 48px;
-  background: linear-gradient(145deg, rgba(255, 143, 187, 0.62), rgba(247, 170, 211, 0.5));
+  width: 50%;
+  border-radius: 64px 96px 0 0;
+  background: linear-gradient(145deg, rgba(247, 183, 210, 0.62), rgba(255, 210, 184, 0.52));
 }
 
 .reference-layer {
   position: absolute;
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.52);
-  background: linear-gradient(140deg, rgba(211, 235, 245, 0.52), rgba(231, 208, 224, 0.42));
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(140deg, rgba(191, 217, 255, 0.34), rgba(215, 198, 255, 0.25));
 }
 
 .reference-layer-top {
@@ -246,7 +251,7 @@ a {
   right: 40%;
   top: 11%;
   height: 33%;
-  border-radius: 28px;
+  border-radius: 32px;
 }
 
 .reference-layer-bottom {
@@ -254,7 +259,7 @@ a {
   right: 4%;
   top: 27%;
   height: 31%;
-  border-radius: 28px;
+  border-radius: 32px;
 }
 
 .reference-copy {
@@ -262,55 +267,59 @@ a {
   z-index: 3;
   left: 8%;
   top: 17%;
-  max-width: 470px;
+  max-width: 560px;
 }
 
 .reference-title {
-  font-family: "Aileron", "Avenir Next", "Segoe UI", sans-serif;
-  font-size: clamp(2rem, 3.8vw, 3.75rem);
+  font-size: clamp(2.15rem, 4.8vw, 4rem);
   font-weight: 700;
-  line-height: 0.96;
+  line-height: 1;
   letter-spacing: -0.02em;
-  color: #070910;
+  color: #0b0f1a;
+  max-width: 18ch;
 }
 
 .reference-subtitle {
   margin-top: 1rem;
-  font-size: clamp(0.95rem, 1.15vw, 1.15rem);
-  color: rgba(7, 9, 16, 0.85);
+  font-size: clamp(1rem, 1.25vw, 1.125rem);
+  line-height: 1.6;
+  color: #3b4254;
+  max-width: 42ch;
 }
 
 .reference-arrow {
   position: absolute;
   left: 50%;
-  bottom: 25.5%;
+  bottom: 24%;
   z-index: 4;
   display: grid;
   place-items: center;
-  height: 86px;
-  width: 86px;
-  transform: translateX(-50%);
+  height: 72px;
+  width: 72px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 2.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(var(--blur-glass));
+  color: rgba(11, 15, 26, 0.88);
+  font-size: 1.9rem;
   line-height: 1;
-  transition: transform 220ms ease, background-color 220ms ease;
+  transition: background-color 240ms cubic-bezier(0.2, 0.8, 0.2, 1), color 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation: float 2400ms cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
 }
 
 .reference-arrow:hover {
-  transform: translateX(-50%) translateY(-4px);
-  background: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.5);
+  color: rgba(11, 15, 26, 1);
 }
 
 @media (max-width: 768px) {
   .ambient-grid {
-    background-size: 34px 34px;
+    background-size: 64px 64px;
   }
 
   .reference-hero {
-    min-height: 430px;
+    min-height: 450px;
+    border-radius: 48px;
   }
 
   .reference-layer-top {
@@ -334,13 +343,13 @@ a {
   .reference-pink {
     width: 54%;
     height: 52%;
-    border-top-right-radius: 34px;
+    border-radius: 40px 52px 0 0;
   }
 
   .reference-arrow {
-    bottom: 29%;
-    height: 72px;
-    width: 72px;
-    font-size: 2.1rem;
+    bottom: 28%;
+    height: 64px;
+    width: 64px;
+    font-size: 1.8rem;
   }
 }

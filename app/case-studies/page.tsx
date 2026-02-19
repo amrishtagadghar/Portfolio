@@ -46,29 +46,33 @@ export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageP
         </p>
       </section>
 
-      <section className="rounded-2xl border border-ink/10 bg-white p-6">
+      <section className="surface-card rounded-[32px] p-6">
         <div className="flex flex-wrap gap-2">
-          <Link href="/case-studies" className="rounded-full border border-ink/20 px-3 py-1 text-sm">
+          <Link href="/case-studies" className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm">
             All
           </Link>
           {disciplines.map((discipline) => (
             <Link
               key={discipline}
               href={`/case-studies?discipline=${encodeURIComponent(discipline)}`}
-              className="rounded-full border border-ink/20 px-3 py-1 text-sm"
+              className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm"
             >
               {discipline}
             </Link>
           ))}
           {years.map((year) => (
-            <Link key={year} href={`/case-studies?year=${year}`} className="rounded-full border border-ink/20 px-3 py-1 text-sm">
+            <Link
+              key={year}
+              href={`/case-studies?year=${year}`}
+              className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm"
+            >
               {year}
             </Link>
           ))}
-          <Link href="/case-studies?sort=featured" className="rounded-full border border-ink/20 px-3 py-1 text-sm">
+          <Link href="/case-studies?sort=featured" className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm">
             Featured
           </Link>
-          <Link href="/case-studies?sort=newest" className="rounded-full border border-ink/20 px-3 py-1 text-sm">
+          <Link href="/case-studies?sort=newest" className="rounded-full border border-white/70 bg-white/35 px-3 py-1 text-sm">
             Newest
           </Link>
         </div>
@@ -80,13 +84,14 @@ export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageP
         ))}
       </section>
 
-      <section className="rounded-2xl border border-rust/40 bg-rust/10 p-8">
-        <h2 className="font-serif text-2xl text-ink">Want results like this?</h2>
-        <p className="mt-2 text-ink/80">Share your goal and timeline. I&apos;ll reply with a practical plan.</p>
-        <Link href="/contact" className="mt-4 inline-block rounded-full bg-rust px-5 py-2 text-sm font-semibold text-white">
+      <section className="glass-panel rounded-[48px] p-8">
+        <h2 className="font-sans text-2xl text-ink">Want results like this?</h2>
+        <p className="mt-2 text-ink-muted">Share your goal and timeline. I&apos;ll reply with a practical plan.</p>
+        <Link href="/contact" className="mt-4 inline-block rounded-full border border-white/70 bg-white/45 px-5 py-2 text-sm font-semibold text-ink">
           Contact
         </Link>
       </section>
     </div>
   );
 }
+

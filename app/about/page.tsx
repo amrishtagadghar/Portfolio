@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <div className="page-shell space-y-8">
       <h1 className="section-title">About</h1>
-      <div className="glass-panel max-w-4xl space-y-4 rounded-3xl p-8 text-ink/85">
+      <div className="glass-panel max-w-4xl space-y-4 rounded-[48px] p-8 text-ink-muted">
         <p>
           I&apos;m Amrish a.k.a Tashya, a graphic designer with over 7 years of experience transforming complex ideas
           into clear, impactful visuals. My work spans branding, editorial, motion, and digital campaigns, often
