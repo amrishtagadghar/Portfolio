@@ -37,10 +37,11 @@ export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageP
   const years = Array.from(new Set(caseStudies.map((item) => item.year))).sort((a, b) => b - a);
 
   return (
-    <div className="page-shell space-y-10">
-      <section>
-        <h1 className="section-title">Case Studies</h1>
-        <p className="mt-3 max-w-2xl text-ink/80">
+    <div className="page-shell space-y-12">
+      <section className="glass-panel rounded-[48px] p-8 md:p-10">
+        <span className="section-kicker">Case Studies</span>
+        <h1 className="section-title mt-3">Real projects, clear outcomes</h1>
+        <p className="mt-3 max-w-2xl text-ink-muted">
           Browse work by discipline, year, and outcomes. Each story highlights context, decisions, and measurable
           impact.
         </p>
@@ -78,14 +79,14 @@ export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageP
         </div>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      <section className="stagger-grid grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {filtered.map((study) => (
           <CaseStudyCard key={study.slug} study={study} />
         ))}
       </section>
 
       <section className="glass-panel rounded-[48px] p-8">
-        <h2 className="font-sans text-2xl text-ink">Want results like this?</h2>
+        <h2 className="text-2xl font-bold text-ink">Want results like this?</h2>
         <p className="mt-2 text-ink-muted">Share your goal and timeline. I&apos;ll reply with a practical plan.</p>
         <Link href="/contact" className="mt-4 inline-block rounded-full border border-white/70 bg-white/45 px-5 py-2 text-sm font-semibold text-ink">
           Contact
@@ -94,4 +95,3 @@ export default async function CaseStudiesPage({ searchParams }: CaseStudiesPageP
     </div>
   );
 }
-

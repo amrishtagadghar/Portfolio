@@ -17,12 +17,11 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
   return (
-    <div className="page-shell space-y-10">
-      <section>
-        <h1 className="section-title">Blog</h1>
-        <p className="mt-3 max-w-2xl text-ink/80">
-          Writing on brand systems, visual craft, and practical design process.
-        </p>
+    <div className="page-shell space-y-12">
+      <section className="glass-panel rounded-[48px] p-8 md:p-10">
+        <span className="section-kicker">Blog</span>
+        <h1 className="section-title mt-3">Notes on craft and systems</h1>
+        <p className="mt-3 max-w-2xl text-ink-muted">Writing on brand systems, visual craft, and practical design process.</p>
       </section>
 
       <section className="surface-card rounded-[32px] p-6">
@@ -42,7 +41,7 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
         </div>
       </section>
 
-      <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <section className="stagger-grid grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {filtered.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}

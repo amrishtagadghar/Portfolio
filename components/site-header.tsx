@@ -9,24 +9,28 @@ const navItems = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-white/50 bg-white/35 backdrop-blur-2xl">
-      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" className="font-sans text-lg font-semibold tracking-tight text-ink md:text-xl">
+    <header className="sticky top-0 z-30 px-4 pt-4 md:px-6">
+      <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 rounded-full border border-white/60 bg-white/35 px-5 py-3 backdrop-blur-2xl">
+        <Link href="/" className="text-base font-semibold tracking-tight text-ink md:text-lg">
           Amrish Tagadghar
         </Link>
-        <nav className="flex flex-wrap items-center justify-end gap-2 text-xs font-semibold uppercase tracking-[0.12em] md:gap-4 md:text-sm md:normal-case md:tracking-normal">
+
+        <nav className="hidden items-center gap-2 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-transparent px-3 py-1 text-ink-muted transition hover:border-white/70 hover:bg-white/35 hover:text-ink"
+              className="rounded-full border border-transparent px-3 py-1.5 text-sm font-medium text-ink-muted transition hover:border-white/80 hover:bg-white/45 hover:text-ink"
             >
               {item.label}
             </Link>
           ))}
         </nav>
+
+        <Link href="/contact" className="rounded-full border border-white/80 bg-white/55 px-4 py-1.5 text-sm font-semibold text-ink">
+          Let&apos;s talk
+        </Link>
       </div>
     </header>
   );
 }
-

@@ -1,18 +1,17 @@
 export default function ContactPage() {
   return (
-    <div className="page-shell space-y-8">
-      <section>
-        <h1 className="section-title">Contact</h1>
-        <p className="mt-3 max-w-2xl text-ink/80">
-          I&apos;m looking forward to hearing from you! If you prefer not to fill out forms, feel free to email me
-          directly and let&apos;s talk about the next big thing!
+    <div className="page-shell space-y-12">
+      <section className="glass-panel rounded-[48px] p-8 md:p-10">
+        <span className="section-kicker">Contact</span>
+        <h1 className="section-title mt-3">Let&apos;s build something clear and ambitious</h1>
+        <p className="mt-3 max-w-2xl text-ink-muted">
+          If you prefer not to fill out forms, email directly and we can talk through scope, timeline, and next steps.
         </p>
-        <p className="mt-4 text-sm text-ink/70">Availability: Currently available for new work.</p>
       </section>
 
       <section className="grid gap-8 md:grid-cols-2">
         <article className="surface-card rounded-[32px] p-6">
-          <h2 className="font-sans text-2xl">Direct links</h2>
+          <h2 className="text-2xl font-bold">Direct links</h2>
           <ul className="mt-4 space-y-2 text-sm text-ink-muted">
             <li>Email: amrishst@gmail.com</li>
             <li>LinkedIn: linkedin.com/in/amrish-tagadghar</li>
@@ -21,7 +20,7 @@ export default function ContactPage() {
         </article>
 
         <form action="/api/contact" method="post" className="surface-card space-y-4 rounded-[32px] p-6">
-          <h2 className="font-sans text-2xl">Contact form</h2>
+          <h2 className="text-2xl font-bold">Contact form</h2>
           <input
             type="text"
             name="company"
@@ -64,4 +63,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
