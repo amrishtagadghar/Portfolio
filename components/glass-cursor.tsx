@@ -13,6 +13,8 @@ type MergeTarget = {
 
 const CURSOR_SIZE = 44;
 const CURSOR_OFFSET = 12;
+const MERGE_SELECTOR =
+  "[data-cursor-merge], .surface-card, .glass-panel, .hero-shell, .hero-visual, .hero-stack-card, .blob-panel";
 
 export function GlassCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -40,7 +42,7 @@ export function GlassCursor() {
     const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
     const syncTargetMetrics = () => {
-      const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-cursor-merge]"));
+      const nodes = Array.from(document.querySelectorAll<HTMLElement>(MERGE_SELECTOR));
       const liveNodes = new Set(nodes);
 
       targets.forEach((target, element) => {
@@ -52,6 +54,10 @@ export function GlassCursor() {
         element.style.removeProperty("--cursor-pull-x");
         element.style.removeProperty("--cursor-pull-y");
         element.style.removeProperty("--cursor-contact");
+        element.style.removeProperty("--blob-shift-x");
+        element.style.removeProperty("--blob-shift-y");
+        element.style.removeProperty("--blob-contact");
+        element.style.removeProperty("--blob-scale");
         element.removeAttribute("data-cursor-active");
         targets.delete(element);
       });
@@ -114,11 +120,19 @@ export function GlassCursor() {
         const pull = contact * 14;
         const pullX = (dx / safeDistance) * pull;
         const pullY = (dy / safeDistance) * pull;
+        const blobShift = Math.min(target.size * 0.04, 18) * contact;
+        const blobShiftX = (dx / safeDistance) * blobShift;
+        const blobShiftY = (dy / safeDistance) * blobShift;
+        const blobScale = 1 + contact * 0.018;
 
         target.ghost.style.transform = `translate(calc(-50% + ${pullX}px), calc(-50% + ${pullY}px)) scale(${1 + contact * 0.08})`;
         target.element.style.setProperty("--cursor-pull-x", `${pullX}px`);
         target.element.style.setProperty("--cursor-pull-y", `${pullY}px`);
         target.element.style.setProperty("--cursor-contact", contact.toFixed(3));
+        target.element.style.setProperty("--blob-shift-x", `${blobShiftX}px`);
+        target.element.style.setProperty("--blob-shift-y", `${blobShiftY}px`);
+        target.element.style.setProperty("--blob-contact", contact.toFixed(3));
+        target.element.style.setProperty("--blob-scale", blobScale.toFixed(3));
         target.element.toggleAttribute("data-cursor-active", active);
       });
 
@@ -169,6 +183,10 @@ export function GlassCursor() {
         target.element.style.removeProperty("--cursor-pull-x");
         target.element.style.removeProperty("--cursor-pull-y");
         target.element.style.removeProperty("--cursor-contact");
+        target.element.style.removeProperty("--blob-shift-x");
+        target.element.style.removeProperty("--blob-shift-y");
+        target.element.style.removeProperty("--blob-contact");
+        target.element.style.removeProperty("--blob-scale");
         target.element.removeAttribute("data-cursor-active");
       });
     };
