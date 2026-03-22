@@ -134,6 +134,15 @@ a {
     transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.glass-cursor-ghost.cursor-ghost-decor {
+  border: none;
+  box-shadow: none;
+}
+
+.glass-cursor-ghost.cursor-ghost-decor::before {
+  display: none;
+}
+
 .ambient-grid {
   position: absolute;
   inset: 0;
@@ -147,12 +156,34 @@ a {
 .blob {
   position: absolute;
   border-radius: 999px;
+  transform: translate3d(var(--blob-shift-x, 0), var(--blob-shift-y, 0), 0) scale(var(--blob-scale, 1));
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 220ms ease;
+  will-change: transform;
+}
+
+.blob-surface {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
   filter: blur(88px);
-  opacity: 0.34;
+  opacity: calc(0.34 + var(--blob-contact, 0) * 0.12);
   transform-origin: center center;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  transition:
+    opacity 220ms ease,
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform: scale(calc(1 + var(--blob-contact, 0) * 0.08));
+}
+
+.cursor-merge-decor {
+  --blob-shift-x: 0px;
+  --blob-shift-y: 0px;
+  --blob-contact: 0;
+  --blob-scale: 1;
 }
 
 .blob-one {
@@ -162,6 +193,9 @@ a {
   min-height: 280px;
   left: -10vw;
   top: -14vw;
+}
+
+.blob-one .blob-surface {
   background: radial-gradient(circle at 35% 35%, #f7b7d2, #ffd2b8);
   animation-name: drift-a;
   animation-duration: 18s;
@@ -174,6 +208,9 @@ a {
   min-height: 240px;
   right: -12vw;
   top: 10vh;
+}
+
+.blob-two .blob-surface {
   background: radial-gradient(circle at 30% 30%, #bfd9ff, #d7c6ff);
   animation-name: drift-b;
   animation-duration: 22s;
@@ -186,6 +223,9 @@ a {
   min-height: 260px;
   left: 24vw;
   bottom: -22vw;
+}
+
+.blob-three .blob-surface {
   background: radial-gradient(circle at 40% 45%, #bff3dd, #bfd9ff);
   animation-name: drift-c;
   animation-duration: 20s;
@@ -198,6 +238,9 @@ a {
   min-height: 220px;
   right: 18vw;
   bottom: -8vw;
+}
+
+.blob-four .blob-surface {
   background: radial-gradient(circle at 40% 45%, #d7c6ff, #f7b7d2);
   animation-name: drift-d;
   animation-duration: 24s;
@@ -308,15 +351,15 @@ a {
   overflow: hidden;
   isolation: isolate;
   border-radius:
-    calc(34px + var(--blob-contact) * 18px)
-    calc(46px + var(--blob-contact) * 10px)
-    calc(38px + var(--blob-contact) * 16px)
-    calc(52px + var(--blob-contact) * 12px)
+    calc(28px + var(--blob-contact) * 26px)
+    calc(52px + var(--blob-contact) * 18px)
+    calc(34px + var(--blob-contact) * 24px)
+    calc(60px + var(--blob-contact) * 20px)
     /
-    calc(42px + var(--blob-contact) * 12px)
-    calc(36px + var(--blob-contact) * 18px)
-    calc(52px + var(--blob-contact) * 10px)
-    calc(34px + var(--blob-contact) * 16px);
+    calc(46px + var(--blob-contact) * 18px)
+    calc(32px + var(--blob-contact) * 24px)
+    calc(58px + var(--blob-contact) * 18px)
+    calc(30px + var(--blob-contact) * 22px);
   transform: translate3d(var(--blob-shift-x), var(--blob-shift-y), 0) scale(var(--blob-scale));
   transition:
     transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -338,10 +381,14 @@ a {
   pointer-events: none;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.42), transparent 30%),
-    radial-gradient(circle at 84% 78%, rgba(191, 217, 255, 0.14), transparent 26%),
-    radial-gradient(circle at 12% 88%, rgba(247, 183, 210, 0.16), transparent 24%);
-  opacity: calc(0.52 + var(--blob-contact) * 0.3);
+    radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.46), transparent 30%),
+    radial-gradient(circle at 84% 78%, rgba(191, 217, 255, 0.18), transparent 28%),
+    radial-gradient(circle at 12% 88%, rgba(247, 183, 210, 0.2), transparent 26%);
+  opacity: calc(0.58 + var(--blob-contact) * 0.34);
+  transform: scale(calc(1 + var(--blob-contact) * 0.035));
+  transition:
+    opacity 220ms ease,
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .glass-panel > *,
@@ -361,24 +408,24 @@ a {
 .hero-stack-card[data-cursor-active],
 .blob-panel[data-cursor-active] {
   box-shadow:
-    0 18px 50px rgba(11, 15, 26, 0.12),
-    0 4px 14px rgba(11, 15, 26, 0.08),
-    0 0 34px rgba(255, 255, 255, 0.16);
+    0 22px 56px rgba(11, 15, 26, 0.14),
+    0 4px 16px rgba(11, 15, 26, 0.09),
+    0 0 42px rgba(255, 255, 255, 0.2);
 }
 
 .hero-shell {
   position: relative;
   min-height: 560px;
   border-radius:
-    calc(56px + var(--blob-contact) * 16px)
-    calc(62px + var(--blob-contact) * 10px)
-    calc(88px + var(--blob-contact) * 14px)
-    calc(60px + var(--blob-contact) * 12px)
+    calc(52px + var(--blob-contact) * 20px)
+    calc(76px + var(--blob-contact) * 16px)
+    calc(94px + var(--blob-contact) * 18px)
+    calc(58px + var(--blob-contact) * 16px)
     /
-    calc(58px + var(--blob-contact) * 10px)
     calc(60px + var(--blob-contact) * 16px)
-    calc(92px + var(--blob-contact) * 12px)
-    calc(54px + var(--blob-contact) * 14px);
+    calc(52px + var(--blob-contact) * 20px)
+    calc(98px + var(--blob-contact) * 16px)
+    calc(48px + var(--blob-contact) * 18px);
   border: 1px solid var(--glass-border);
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(var(--blur-glass));
@@ -394,6 +441,20 @@ a {
     transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
     border-radius 280ms cubic-bezier(0.2, 0.8, 0.2, 1),
     box-shadow 220ms ease;
+  will-change: transform;
+}
+
+.hero-corner.cursor-merge-decor,
+.hero-glow.cursor-merge-decor {
+  --blob-shift-x: 0px;
+  --blob-shift-y: 0px;
+  --blob-contact: 0;
+  --blob-scale: 1;
+  transform: translate3d(var(--blob-shift-x), var(--blob-shift-y), 0) scale(var(--blob-scale));
+  transition:
+    transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-radius 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 220ms ease;
   will-change: transform;
 }
 
@@ -504,15 +565,15 @@ a {
 .hero-visual {
   position: relative;
   border-radius:
+    calc(26px + var(--blob-contact) * 16px)
+    calc(40px + var(--blob-contact) * 14px)
+    calc(68px + var(--blob-contact) * 16px)
     calc(30px + var(--blob-contact) * 12px)
-    calc(34px + var(--blob-contact) * 10px)
-    calc(60px + var(--blob-contact) * 12px)
-    calc(32px + var(--blob-contact) * 10px)
     /
-    calc(32px + var(--blob-contact) * 10px)
     calc(34px + var(--blob-contact) * 12px)
-    calc(58px + var(--blob-contact) * 10px)
-    calc(30px + var(--blob-contact) * 12px);
+    calc(36px + var(--blob-contact) * 16px)
+    calc(64px + var(--blob-contact) * 14px)
+    calc(26px + var(--blob-contact) * 14px);
   padding: 1rem;
   min-height: 380px;
 }
@@ -528,6 +589,7 @@ a {
     rgba(191, 217, 255, 0.18) 75%,
     rgba(255, 255, 255, 0) 100%
   );
+  opacity: calc(1 + var(--blob-contact, 0) * 0.16);
 }
 
 .hero-stack {
@@ -570,7 +632,16 @@ a {
   bottom: 0;
   width: min(52%, 430px);
   height: 52%;
-  border-radius: 64px 96px 0 0;
+  border-radius:
+    calc(58px + var(--blob-contact, 0) * 16px)
+    calc(96px + var(--blob-contact, 0) * 12px)
+    0
+    0
+    /
+    calc(64px + var(--blob-contact, 0) * 12px)
+    calc(98px + var(--blob-contact, 0) * 14px)
+    0
+    0;
   background: linear-gradient(145deg, rgba(247, 183, 210, 0.62), rgba(255, 210, 184, 0.52));
 }
 

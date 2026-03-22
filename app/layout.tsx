@@ -28,10 +28,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="text-ink">
         <div className="ambient-root" aria-hidden="true">
-          <div className="blob blob-one" />
-          <div className="blob blob-two" />
-          <div className="blob blob-three" />
-          <div className="blob blob-four" />
+          <div className="blob blob-one cursor-merge-decor">
+            <div className="blob-surface" />
+          </div>
+          <div className="blob blob-two cursor-merge-decor">
+            <div className="blob-surface" />
+          </div>
+          <div className="blob blob-three cursor-merge-decor">
+            <div className="blob-surface" />
+          </div>
+          <div className="blob blob-four cursor-merge-decor">
+            <div className="blob-surface" />
+          </div>
           <div className="ambient-grid" />
         </div>
         <GlassCursor />

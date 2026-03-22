@@ -5,6 +5,10 @@ import { useEffect, useRef } from "react";
 type MergeTarget = {
   element: HTMLElement;
   ghost: HTMLDivElement;
+  left: number;
+  top: number;
+  width: number;
+  height: number;
   x: number;
   y: number;
   size: number;
@@ -14,7 +18,7 @@ type MergeTarget = {
 const CURSOR_SIZE = 44;
 const CURSOR_OFFSET = 12;
 const MERGE_SELECTOR =
-  "[data-cursor-merge], .surface-card, .glass-panel, .hero-shell, .hero-visual, .hero-stack-card, .blob-panel";
+  "[data-cursor-merge], .surface-card, .glass-panel, .hero-shell, .hero-visual, .hero-stack-card, .blob-panel, .cursor-merge-decor";
 
 export function GlassCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -73,6 +77,10 @@ export function GlassCursor() {
           target = {
             element,
             ghost,
+            left: 0,
+            top: 0,
+            width: 0,
+            height: 0,
             x: 0,
             y: 0,
             size: 0,
@@ -85,7 +93,12 @@ export function GlassCursor() {
 
         const rect = element.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
+        const computed = getComputedStyle(element);
 
+        target.left = rect.left;
+        target.top = rect.top;
+        target.width = rect.width;
+        target.height = rect.height;
         target.x = rect.left + rect.width * 0.5;
         target.y = rect.top + rect.height * 0.5;
         target.size = size;
@@ -94,7 +107,13 @@ export function GlassCursor() {
         target.ghost.style.height = `${rect.height}px`;
         target.ghost.style.left = `${target.x}px`;
         target.ghost.style.top = `${target.y}px`;
-        target.ghost.style.borderRadius = getComputedStyle(element).borderRadius;
+        target.ghost.style.borderRadius = computed.borderRadius;
+        target.ghost.classList.toggle("cursor-ghost-decor", element.classList.contains("cursor-merge-decor"));
+        target.ghost.style.background = computed.background;
+        target.ghost.style.border = computed.border;
+        target.ghost.style.boxShadow = computed.boxShadow;
+        target.ghost.style.filter = computed.filter === "none" ? "" : computed.filter;
+        target.ghost.style.opacity = computed.opacity;
       });
     };
 
@@ -106,24 +125,43 @@ export function GlassCursor() {
       cursor.style.top = `${smoothY + CURSOR_OFFSET}px`;
 
       targets.forEach((target) => {
+        const nearestX = clamp(smoothX, target.left, target.left + target.width);
+        const nearestY = clamp(smoothY, target.top, target.top + target.height);
+        const edgeDx = smoothX - nearestX;
+        const edgeDy = smoothY - nearestY;
+        const edgeDistance = Math.hypot(edgeDx, edgeDy);
+        const insideX = smoothX >= target.left && smoothX <= target.left + target.width;
+        const insideY = smoothY >= target.top && smoothY <= target.top + target.height;
+        const isInside = insideX && insideY;
+        const edgeInset = isInside
+          ? Math.min(
+              smoothX - target.left,
+              target.left + target.width - smoothX,
+              smoothY - target.top,
+              target.top + target.height - smoothY
+            )
+          : 0;
+        const edgeActivation = CURSOR_SIZE * 1.4;
+        const insideActivation = Math.min(Math.max(target.size * 0.18, 36), 92);
+        const contact = isInside
+          ? clamp(0.5 + (1 - edgeInset / insideActivation) * 0.5, 0.45, 1)
+          : clamp(1 - edgeDistance / edgeActivation, 0, 1);
+        const active = contact > 0.02;
         const dx = smoothX - target.x;
         const dy = smoothY - target.y;
         const distance = Math.hypot(dx, dy);
-        const activationDistance = target.size * 0.5 + CURSOR_SIZE * 0.65;
-        const contact = clamp(1 - distance / activationDistance, 0, 1);
-        const active = contact > 0.02;
 
         target.active = active;
         target.ghost.style.opacity = active ? String(0.2 + contact * 0.65) : "0";
 
         const safeDistance = Math.max(distance, 1);
-        const pull = contact * 14;
+        const pull = contact * 18;
         const pullX = (dx / safeDistance) * pull;
         const pullY = (dy / safeDistance) * pull;
-        const blobShift = Math.min(target.size * 0.04, 18) * contact;
+        const blobShift = Math.min(target.size * 0.06, 24) * contact;
         const blobShiftX = (dx / safeDistance) * blobShift;
         const blobShiftY = (dy / safeDistance) * blobShift;
-        const blobScale = 1 + contact * 0.018;
+        const blobScale = 1 + contact * 0.032;
 
         target.ghost.style.transform = `translate(calc(-50% + ${pullX}px), calc(-50% + ${pullY}px)) scale(${1 + contact * 0.08})`;
         target.element.style.setProperty("--cursor-pull-x", `${pullX}px`);

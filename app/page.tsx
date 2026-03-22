@@ -15,7 +15,7 @@ export default async function HomePage() {
     <div className="page-shell space-y-20">
       <section className="hero-shell">
         <div className="hero-grid-lines" />
-        <div className="hero-corner" />
+        <div className="hero-corner cursor-merge-decor" />
         <div className="merge-shape merge-shape-one" data-cursor-merge aria-hidden="true" />
         <div className="merge-shape merge-shape-two" data-cursor-merge aria-hidden="true" />
         <div className="merge-shape merge-shape-three" data-cursor-merge aria-hidden="true" />
@@ -39,7 +39,7 @@ export default async function HomePage() {
           </div>
 
           <aside className="hero-visual surface-card">
-            <div className="hero-glow" aria-hidden="true" />
+            <div className="hero-glow cursor-merge-decor" aria-hidden="true" />
             <div className="hero-stack stagger-grid">
               <article className="hero-stack-card glass-panel">
                 <h3>Focus</h3>
