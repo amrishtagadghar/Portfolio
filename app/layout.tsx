@@ -43,9 +43,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="ambient-grid" />
         </div>
         <GlassCursor />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <div className="site-chrome">
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </div>
       </body>
     </html>
   );

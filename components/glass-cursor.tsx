@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 type MergeTarget = {
   element: HTMLElement;
   ghost: HTMLDivElement;
+  isDecor: boolean;
   left: number;
   top: number;
   width: number;
@@ -17,8 +18,7 @@ type MergeTarget = {
 
 const CURSOR_SIZE = 44;
 const CURSOR_OFFSET = 12;
-const MERGE_SELECTOR =
-  "[data-cursor-merge], .surface-card, .glass-panel, .hero-shell, .hero-visual, .hero-stack-card, .blob-panel, .cursor-merge-decor";
+const MERGE_SELECTOR = "[data-cursor-merge], .cursor-merge-decor";
 
 export function GlassCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -55,9 +55,6 @@ export function GlassCursor() {
         }
 
         target.ghost.remove();
-        element.style.removeProperty("--cursor-pull-x");
-        element.style.removeProperty("--cursor-pull-y");
-        element.style.removeProperty("--cursor-contact");
         element.style.removeProperty("--blob-shift-x");
         element.style.removeProperty("--blob-shift-y");
         element.style.removeProperty("--blob-contact");
@@ -77,6 +74,7 @@ export function GlassCursor() {
           target = {
             element,
             ghost,
+            isDecor: false,
             left: 0,
             top: 0,
             width: 0,
@@ -94,7 +92,9 @@ export function GlassCursor() {
         const rect = element.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const computed = getComputedStyle(element);
+        const isDecor = element.classList.contains("cursor-merge-decor");
 
+        target.isDecor = isDecor;
         target.left = rect.left;
         target.top = rect.top;
         target.width = rect.width;
@@ -108,12 +108,12 @@ export function GlassCursor() {
         target.ghost.style.left = `${target.x}px`;
         target.ghost.style.top = `${target.y}px`;
         target.ghost.style.borderRadius = computed.borderRadius;
-        target.ghost.classList.toggle("cursor-ghost-decor", element.classList.contains("cursor-merge-decor"));
+        target.ghost.classList.toggle("cursor-ghost-decor", isDecor);
         target.ghost.style.background = computed.background;
         target.ghost.style.border = computed.border;
         target.ghost.style.boxShadow = computed.boxShadow;
         target.ghost.style.filter = computed.filter === "none" ? "" : computed.filter;
-        target.ghost.style.opacity = computed.opacity;
+        target.ghost.style.opacity = isDecor ? "0" : computed.opacity;
       });
     };
 
@@ -152,7 +152,7 @@ export function GlassCursor() {
         const distance = Math.hypot(dx, dy);
 
         target.active = active;
-        target.ghost.style.opacity = active ? String(0.2 + contact * 0.65) : "0";
+        target.ghost.style.opacity = active ? (target.isDecor ? String(0.08 + contact * 0.18) : String(0.18 + contact * 0.3)) : "0";
 
         const safeDistance = Math.max(distance, 1);
         const pull = contact * 18;
@@ -164,9 +164,6 @@ export function GlassCursor() {
         const blobScale = 1 + contact * 0.032;
 
         target.ghost.style.transform = `translate(calc(-50% + ${pullX}px), calc(-50% + ${pullY}px)) scale(${1 + contact * 0.08})`;
-        target.element.style.setProperty("--cursor-pull-x", `${pullX}px`);
-        target.element.style.setProperty("--cursor-pull-y", `${pullY}px`);
-        target.element.style.setProperty("--cursor-contact", contact.toFixed(3));
         target.element.style.setProperty("--blob-shift-x", `${blobShiftX}px`);
         target.element.style.setProperty("--blob-shift-y", `${blobShiftY}px`);
         target.element.style.setProperty("--blob-contact", contact.toFixed(3));
@@ -218,9 +215,6 @@ export function GlassCursor() {
 
       targets.forEach((target) => {
         target.ghost.remove();
-        target.element.style.removeProperty("--cursor-pull-x");
-        target.element.style.removeProperty("--cursor-pull-y");
-        target.element.style.removeProperty("--cursor-contact");
         target.element.style.removeProperty("--blob-shift-x");
         target.element.style.removeProperty("--blob-shift-y");
         target.element.style.removeProperty("--blob-contact");
