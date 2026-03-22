@@ -16,6 +16,9 @@ export default async function HomePage() {
       <section className="hero-shell">
         <div className="hero-grid-lines" />
         <div className="hero-corner" />
+        <div className="merge-shape merge-shape-one" data-cursor-merge aria-hidden="true" />
+        <div className="merge-shape merge-shape-two" data-cursor-merge aria-hidden="true" />
+        <div className="merge-shape merge-shape-three" data-cursor-merge aria-hidden="true" />
 
         <div className="hero-grid">
           <div className="hero-copy">
@@ -77,7 +80,8 @@ export default async function HomePage() {
       </section>
 
       <section className="grid gap-6 lg:grid-cols-2">
-        <article className="glass-panel rounded-[48px] p-8">
+        <article className="glass-panel rounded-[48px] p-8 relative overflow-hidden">
+          <div className="merge-shape merge-shape-four" data-cursor-merge aria-hidden="true" />
           <span className="section-kicker">Capabilities</span>
           <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight">Systems-first design support</h2>
           <div className="mt-6 flex flex-wrap gap-3 text-sm">
@@ -96,7 +100,8 @@ export default async function HomePage() {
           </div>
         </article>
 
-        <article className="glass-panel rounded-[48px] p-8">
+        <article className="glass-panel rounded-[48px] p-8 relative overflow-hidden">
+          <div className="merge-shape merge-shape-five" data-cursor-merge aria-hidden="true" />
           <span className="section-kicker">Proof</span>
           <h2 className="mt-3 text-3xl font-bold leading-tight tracking-tight">Measured outcomes, not only visuals</h2>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">

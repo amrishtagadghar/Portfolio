@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { GlassCursor } from "@/components/glass-cursor";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
 
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="blob blob-four" />
           <div className="ambient-grid" />
         </div>
+        <GlassCursor />
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
